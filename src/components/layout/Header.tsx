@@ -17,15 +17,15 @@ import { CATEGORIES } from "@/data/navigation";
 interface HeaderProps {
   onOpenQuoteModal: () => void;
   onOpenTrackingModal?: () => void;
-  onToggleMobileNav: () => void;
-  isMobileNavOpen: boolean;
+  onToggleMobileNav?: () => void;
+  isMobileNavOpen?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   onOpenQuoteModal,
   onOpenTrackingModal,
-  onToggleMobileNav,
-  isMobileNavOpen,
+  onToggleMobileNav = () => {},
+  isMobileNavOpen = false,
 }) => {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");

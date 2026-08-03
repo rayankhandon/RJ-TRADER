@@ -10,6 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://rj-trader.vercel.app"),
   title: {
     default: "RJ Traders | Wholesale, Packaging & Logistics Solutions Pakistan",
     template: "%s | RJ Traders",
