@@ -94,7 +94,7 @@ export const TrustInfoSection: React.FC = () => {
 
   return (
     <section className="w-full bg-[#F5F6F8] py-12 lg:py-16 border-b border-gray-200">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-16">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* 1. Industries & Delivery Columns */}
         <AnimatedSection>

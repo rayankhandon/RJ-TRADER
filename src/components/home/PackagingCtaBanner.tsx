@@ -24,7 +24,7 @@ export const PackagingCtaBanner: React.FC<PackagingCtaBannerProps> = ({ onOpenQu
       />
       <div className="absolute inset-0 bg-black/60" />
 
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatedSection>
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             

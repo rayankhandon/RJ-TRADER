@@ -33,7 +33,7 @@ export default function AboutPage() {
 
       {/* Header Banner */}
       <div className="bg-[#07172B] text-white py-12 border-b border-white/10">
-        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-400 mb-2 uppercase tracking-wider font-semibold">
             <Link href="/" className="hover:text-[#F97316]">HOME</Link>
             <ChevronRight className="w-3.5 h-3.5" />
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <main className="flex-1 w-full py-12 space-y-16">
         
         {/* Story & Vision */}
-        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-4">
               <span className="text-xs font-black uppercase text-[#F97316] tracking-widest">OUR HERITAGE</span>
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
         {/* Team Grid */}
         <div className="bg-white py-14 border-y border-gray-200">
-          <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-black uppercase tracking-widest text-[#F97316]">EXPERT LEADERSHIP</span>
               <h2 className="text-2xl font-black uppercase text-[#0A1A2F] mt-1">THE TEAM BEHIND RJ TRADERS</h2>

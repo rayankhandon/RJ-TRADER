@@ -45,7 +45,7 @@ export default function ContactPage() {
 
       {/* Header Banner */}
       <div className="bg-[#07172B] text-white py-12 border-b border-white/10">
-        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-400 mb-2 uppercase tracking-wider font-semibold">
             <Link href="/" className="hover:text-[#F97316]">HOME</Link>
             <ChevronRight className="w-3.5 h-3.5" />
@@ -61,7 +61,7 @@ export default function ContactPage() {
       </div>
 
       <main className="flex-1 w-full py-12 space-y-12">
-        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             {/* Left Info Column */}

@@ -32,7 +32,7 @@ export const TestimonialsSection: React.FC = () => {
       {/* Background Decorative Glow */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#F97316]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <AnimatedSection>

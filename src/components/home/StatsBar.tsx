@@ -27,7 +27,7 @@ export const StatsBar: React.FC = () => {
 
   return (
     <section className="w-full bg-[#06182F] text-white py-8 border-b border-navy-900">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {trustStatements.map((st, idx) => {
             const Icon = st.icon;

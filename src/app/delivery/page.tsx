@@ -37,7 +37,7 @@ export default function DeliveryPage() {
 
       {/* Header Banner */}
       <div className="bg-[#07172B] text-white py-12 border-b border-white/10">
-        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-gray-400 mb-2 uppercase tracking-wider font-semibold">
             <Link href="/" className="hover:text-[#F97316]">HOME</Link>
             <ChevronRight className="w-3.5 h-3.5" />
@@ -55,7 +55,7 @@ export default function DeliveryPage() {
       <main className="flex-1 w-full py-12 space-y-12">
         
         {/* Order Tracking Callout Box */}
-        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#07172B] border border-white/15 rounded-xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-black text-[#F97316] uppercase tracking-wider mb-2">
@@ -78,7 +78,7 @@ export default function DeliveryPage() {
         </div>
 
         {/* Coverage Grid */}
-        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <h2 className="text-xl sm:text-2xl font-black uppercase text-[#0A1A2F]">
               MAIN COVERAGE HUBS & TIMELINES

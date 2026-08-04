@@ -6,7 +6,7 @@ import { Logo } from "@/components/common/Logo";
 export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-[#06182F] text-white pt-12 pb-6 border-t border-navy-900">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           
           {/* Column 1: Brand Info & Official Logo (2 cols wide on lg) */}

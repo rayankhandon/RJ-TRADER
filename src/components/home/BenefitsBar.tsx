@@ -38,7 +38,7 @@ export const BenefitsBar: React.FC = () => {
 
   return (
     <section className="w-full bg-white border-b border-gray-200 pt-10 pb-9">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {benefits.map((item, idx) => {
             const Icon = item.icon;

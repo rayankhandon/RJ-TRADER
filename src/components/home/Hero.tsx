@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
       </div>
 
       {/* 3. Hero Content Container over Background */}
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-10 relative z-20">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 relative z-20">
         <div className="max-w-xl lg:max-w-2xl">
           
           {/* Category Badge */}

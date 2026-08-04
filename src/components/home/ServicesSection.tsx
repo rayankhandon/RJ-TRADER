@@ -74,7 +74,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
 
   return (
     <section className="w-full bg-[#F5F6F8] py-12 lg:py-16 border-b border-gray-200">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <AnimatedSection>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
