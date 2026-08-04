@@ -5,7 +5,7 @@ import { CONTACT_INFO } from "@/data/navigation";
 export const TopBar: React.FC = () => {
   return (
     <div className="w-full bg-[#06182F] text-white text-xs border-b border-white/10 py-2.5 transition-colors">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex flex-wrap items-center justify-between gap-3">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
         {/* Left Side: Contact Info */}
         <div className="flex items-center gap-6">
           <a

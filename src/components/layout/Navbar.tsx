@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
 
   return (
     <nav className="w-full bg-[#0B2545] text-white hidden lg:block border-t border-b border-white/10 shadow-md">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-12">
           {/* Main Navigation Links */}
           <div className="flex items-center gap-2 xl:gap-4 h-full">

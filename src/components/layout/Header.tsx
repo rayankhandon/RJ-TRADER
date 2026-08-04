@@ -69,11 +69,11 @@ export const Header: React.FC<HeaderProps> = ({
     <header className={`w-full bg-white border-b border-gray-200 sticky top-0 z-40 transition-all duration-300 ${
       isScrolled ? "shadow-md bg-white/95 backdrop-blur-md border-gray-300" : "shadow-xs"
     }`}>
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-2 lg:py-2.5">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 lg:py-3">
         <div className="flex items-center justify-between gap-3 lg:gap-6">
           
           {/* Logo & Category Selector (Left) */}
-          <div className="flex items-center gap-3 lg:gap-6 shrink-0">
+          <div className="flex items-center gap-4 lg:gap-8 shrink-0">
             {/* Mobile Hamburger Trigger */}
             <button
               onClick={onToggleMobileNav}
