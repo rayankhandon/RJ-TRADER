@@ -18,14 +18,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
         <img
           src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=85"
           alt="RJ Traders Modern Industrial Warehouse & Distribution Logistics"
-          className="w-full h-full object-cover object-right-center pointer-events-none"
+          className="w-full h-full object-cover object-right-center pointer-events-none brightness-[0.85]"
         />
         
-        {/* 2. Full-Width Left-to-Right Gradient Overlay */}
+        {/* 2. Full-Width Subtle Darkening Overlay (20% dark blue tint for global contrast & text readability) */}
+        <div className="absolute inset-0 bg-[#021225]/25 z-10 pointer-events-none" />
+
+        {/* 3. Left-to-Right Gradient Overlay for Text Background */}
         <div 
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
-            background: "linear-gradient(90deg, rgba(2, 18, 37, 0.95) 0%, rgba(2, 18, 37, 0.85) 30%, rgba(2, 18, 37, 0.45) 55%, transparent 80%)"
+            background: "linear-gradient(90deg, rgba(2, 18, 37, 0.96) 0%, rgba(2, 18, 37, 0.88) 35%, rgba(2, 18, 37, 0.50) 60%, transparent 85%)"
           }}
         />
 
@@ -33,8 +36,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#021225]/40 via-transparent to-[#021225]/50 z-10 pointer-events-none" />
       </div>
 
-      {/* 3. Hero Content Container over Background */}
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 relative z-20">
+      {/* 4. Hero Content Container over Background */}
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 relative z-20 flex items-center justify-between gap-8">
+        
+        {/* Left Text Block */}
         <div className="max-w-xl lg:max-w-2xl">
           
           {/* Category Badge */}
@@ -136,6 +141,42 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
           </div>
 
         </div>
+
+        {/* Right-Side Floating Stat & Trust Cards (Hidden on mobile/tablet, visible on xl/desktop) */}
+        <div className="hidden xl:flex flex-col gap-4 pointer-events-auto shrink-0 mr-4 lg:mr-12">
+          
+          {/* Card 1: Option A Stat Highlight (Monthly Deliveries) */}
+          <div className="bg-white/95 backdrop-blur-md border border-white/60 text-[#0A1A2F] p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.35)] animate-float flex items-center gap-3.5 w-64 transition-transform hover:scale-105">
+            <div className="w-11 h-11 rounded-xl bg-[#F97316] flex items-center justify-center text-white shrink-0 shadow-md">
+              <Truck className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xl font-black font-sans leading-none text-[#0A1A2F] tracking-tight">
+                500+
+              </div>
+              <div className="text-xs font-bold text-gray-700 uppercase tracking-wider mt-1">
+                Deliveries Monthly
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Option B Trust Badge (Nationwide Cities Covered) */}
+          <div className="bg-[#06182F]/90 backdrop-blur-md border border-white/20 text-white p-3.5 rounded-xl shadow-2xl animate-float-delayed flex items-center gap-3 w-56 ml-8 transition-transform hover:scale-105">
+            <div className="w-9 h-9 rounded-lg bg-[#F97316]/20 border border-[#F97316] flex items-center justify-center text-[#F97316] shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-xs font-black uppercase tracking-wider text-white">
+                50+ CITIES
+              </div>
+              <div className="text-[10px] text-gray-300 font-medium tracking-wide mt-0.5">
+                Trusted B2B Network
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
