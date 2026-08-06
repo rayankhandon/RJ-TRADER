@@ -6,6 +6,7 @@ interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
   delayMs?: number;
+  animation?: string;
 }
 
 export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
