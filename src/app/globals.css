@@ -45,6 +45,24 @@ body {
   }
 }
 
+@keyframes badge-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes badge-float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -52,3 +70,101 @@ body {
 .animate-float-delayed {
   animation: float-delayed 4.5s ease-in-out infinite 1.5s;
 }
+
+.animate-badge-float {
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+.animate-badge-float-delayed {
+  animation: badge-float-delayed 4s ease-in-out infinite 2s;
+}
+
+/* Page-Load Staggered Entrance Animations */
+@keyframes loadFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes loadFadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-load-nav {
+  animation: loadFadeInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-load-badge {
+  opacity: 0;
+  animation: loadFadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+}
+
+.animate-load-heading {
+  opacity: 0;
+  animation: loadFadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+.animate-load-subtext {
+  opacity: 0;
+  animation: loadFadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.40s forwards;
+}
+
+.animate-load-trust {
+  opacity: 0;
+  animation: loadFadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+}
+
+.animate-load-cta {
+  opacity: 0;
+  animation: loadFadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.70s forwards;
+}
+
+.animate-load-image-box {
+  opacity: 0;
+  animation: loadFadeInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+.animate-load-stat-badge-1 {
+  opacity: 0;
+  animation: loadFadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+}
+
+.animate-load-stat-badge-2 {
+  opacity: 0;
+  animation: loadFadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
+}
+

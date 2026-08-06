@@ -15,10 +15,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   return (
     <nav className="w-full bg-[#0B2545] text-white hidden lg:block border-t border-b border-white/10 shadow-md">
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-12">
-          {/* Main Navigation Links */}
-          <div className="flex items-center gap-2 xl:gap-4 h-full">
-            {NAV_ITEMS.map((item) => {
+        <div className="flex items-center justify-between h-11">
+          {/* Main Navigation Links (Left Aligned matching Header Logo boundary) */}
+          <div className="flex items-center gap-2 lg:gap-5 xl:gap-7 h-full">
+            {NAV_ITEMS.map((item, index) => {
+              const isFirst = index === 0;
               if (item.hasDropdown) {
                 return (
                   <div
@@ -29,7 +30,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-1.5 px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors hover:text-[#F97316] ${
+                      className={`flex items-center gap-1.5 ${
+                        isFirst ? "pl-0 pr-3" : "px-3"
+                      } py-2 text-xs font-bold uppercase tracking-wider transition-colors hover:text-[#F97316] ${
                         item.active ? "text-[#F97316]" : "text-white"
                       }`}
                     >
@@ -74,9 +77,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`relative px-3.5 py-2 text-xs font-bold uppercase tracking-wider transition-colors hover:text-[#F97316] flex items-center h-full ${
+                  className={`relative ${
+                    isFirst ? "pl-0 pr-3.5" : "px-3.5"
+                  } py-2 text-xs font-bold uppercase tracking-wider transition-colors hover:text-[#F97316] flex items-center h-full ${
                     item.active
-                      ? "text-[#F97316] font-extrabold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#F97316]"
+                      ? `text-[#F97316] font-extrabold after:absolute after:bottom-0 ${
+                          isFirst ? "after:left-0 after:right-3.5" : "after:left-0 after:right-0"
+                        } after:h-0.5 after:bg-[#F97316]`
                       : "text-white"
                   }`}
                 >
@@ -87,10 +94,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
           </div>
 
           {/* Far Right CTA Button */}
-          <div>
+          <div className="shrink-0">
             <button
               onClick={onOpenQuoteModal}
-              className="bg-[#F97316] hover:bg-[#EA580C] hover:scale-[1.02] text-white text-xs font-extrabold uppercase tracking-widest px-5 py-2.5 rounded-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer active:scale-95"
+              className="bg-[#F97316] hover:bg-[#EA580C] hover:scale-[1.02] text-white text-xs font-extrabold uppercase tracking-widest px-4 sm:px-5 py-2 rounded-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer active:scale-95"
             >
               <span>REQUEST A QUOTE</span>
               <ArrowRight className="w-3.5 h-3.5" />

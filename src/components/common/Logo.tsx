@@ -20,8 +20,8 @@ export const Logo: React.FC<LogoProps> = ({ className = "", size = "header", lig
         height={350}
         className={`object-contain transition-transform duration-200 group-hover:scale-[1.02] ${
           isFooter
-            ? "h-[90px] sm:h-[100px] lg:h-[110px] w-auto filter brightness-0 invert"
-            : "h-[66px] sm:h-[78px] lg:h-[90px] w-auto"
+            ? "h-[95px] sm:h-[110px] lg:h-[120px] w-auto filter brightness-0 invert"
+            : "h-[48px] sm:h-[56px] lg:h-[62px] w-auto"
         }`}
         priority
       />

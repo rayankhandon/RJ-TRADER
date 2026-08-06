@@ -8,11 +8,12 @@ import {
   Building2,
   ShoppingBag,
   UtensilsCrossed,
-  Activity,
   Sprout,
   Boxes,
-  MapPin,
   Truck,
+  ShieldCheck,
+  Zap,
+  Tag,
 } from "lucide-react";
 import { AnimatedSection } from "@/components/common/AnimatedSection";
 
@@ -23,7 +24,7 @@ export const TrustInfoSection: React.FC = () => {
     { label: "Construction", icon: Building2 },
     { label: "Retail & Wholesale", icon: ShoppingBag },
     { label: "Food & Beverage", icon: UtensilsCrossed },
-    { label: "Pharmaceutical", icon: Activity },
+    { label: "Fleet & Transport Companies", icon: Truck },
     { label: "Agriculture", icon: Sprout },
     { label: "Industrial Supply", icon: Boxes },
   ];
@@ -77,18 +78,22 @@ export const TrustInfoSection: React.FC = () => {
     {
       title: "Years of Experience",
       desc: "Proven track record across the region",
+      icon: ShieldCheck,
     },
     {
       title: "End-to-End Service",
       desc: "Sourcing, packaging, and delivery, no middlemen",
+      icon: Boxes,
     },
     {
       title: "Transparent Pricing",
       desc: "No hidden costs, no surprises",
+      icon: Tag,
     },
     {
       title: "Fast Turnaround",
       desc: "We know delays cost you money",
+      icon: Zap,
     },
   ];
 
@@ -98,10 +103,10 @@ export const TrustInfoSection: React.FC = () => {
         
         {/* 1. Industries & Delivery Columns */}
         <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Industries We Serve (Col 7) */}
-            <div className="lg:col-span-7 bg-white rounded-lg border border-gray-200 p-6 sm:p-8 flex flex-col justify-between">
+            <div className="lg:col-span-7 bg-white rounded-[18px] border border-gray-200/80 p-6 sm:p-8 lg:p-9 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.06)] h-full">
               <div>
                 <div className="text-[11px] font-extrabold tracking-widest text-[#F97316] uppercase mb-1">
                   SECTOR COVERAGE
@@ -109,22 +114,24 @@ export const TrustInfoSection: React.FC = () => {
                 <h2 className="text-xl sm:text-2xl font-black text-[#06182F] uppercase tracking-tight font-sans">
                   INDUSTRIES WE SERVE
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-600 font-normal mt-1 mb-6">
+                <p className="text-xs sm:text-sm text-gray-600 font-normal mt-1 mb-6 leading-relaxed">
                   Supporting businesses across a range of commercial and industrial sectors.
                 </p>
 
-                <div className="grid grid-cols-2 sm:grid-cols-2 gap-3">
+                {/* Focused 8-Item 2-Column x 4-Row Grid with Interactive White Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                   {industries.map((ind, idx) => {
                     const Icon = ind.icon;
                     return (
                       <div
                         key={idx}
-                        className="p-3.5 rounded bg-[#F5F6F8] border border-gray-200 text-xs font-bold text-[#06182F] flex items-center gap-3 hover:border-[#F97316]/50 hover:bg-[#F97316]/5 transition-all group"
+                        className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#ececec] text-xs sm:text-sm font-bold text-[#06182F] flex items-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.04)] hover:bg-[#FFF8F5] hover:border-[#F97316]/40 hover:-translate-y-[3px] hover:shadow-md transition-all duration-200 group cursor-default"
                       >
-                        <div className="w-7 h-7 rounded bg-white border border-gray-200 flex items-center justify-center text-[#F97316] group-hover:bg-[#F97316] group-hover:text-white transition-colors shrink-0">
-                          <Icon className="w-3.5 h-3.5" />
+                        {/* Orange Circle Icon */}
+                        <div className="w-9 h-9 rounded-full bg-[#F97316]/10 text-[#F97316] flex items-center justify-center shrink-0 group-hover:bg-[#F97316] group-hover:text-white transition-colors duration-200 shadow-2xs">
+                          <Icon className="w-4.5 h-4.5" />
                         </div>
-                        <span>{ind.label}</span>
+                        <span className="leading-snug group-hover:text-[#F97316] transition-colors">{ind.label}</span>
                       </div>
                     );
                   })}
@@ -133,7 +140,7 @@ export const TrustInfoSection: React.FC = () => {
             </div>
 
             {/* Delivery Across Pakistan (Col 5) */}
-            <div className="lg:col-span-5 bg-white rounded-lg border border-gray-200 p-6 sm:p-8 flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-white rounded-[18px] border border-gray-200/80 p-6 sm:p-8 lg:p-9 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.06)] h-full">
               <div>
                 <div className="text-[11px] font-extrabold tracking-widest text-[#F97316] uppercase mb-1">
                   NATIONWIDE LOGISTICS
@@ -146,7 +153,7 @@ export const TrustInfoSection: React.FC = () => {
                 </p>
 
                 {/* Geographically Accurate Pakistan Map Container */}
-                <div className="my-5 relative w-full h-[260px] bg-[#06182F] rounded-lg border border-gray-800 p-3 overflow-hidden flex items-center justify-center">
+                <div className="my-5 relative w-full h-[260px] bg-[#06182F] rounded-xl border border-gray-800 p-3 overflow-hidden flex items-center justify-center shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]">
                   {/* Subtle Grid Background */}
                   <div className="absolute inset-0 bg-[radial-[#F97316]/10_1px,transparent_1px] [background-size:16px_16px] opacity-30" />
                   
@@ -173,17 +180,17 @@ export const TrustInfoSection: React.FC = () => {
                     <line x1="768" y1="460" x2="584" y2="266" stroke="#F97316" strokeDasharray="15,15" strokeWidth="8" className="opacity-80" />
                   </svg>
 
-                  {/* Staggered Non-Overlapping City Overlay Dots & Badges */}
+                  {/* Staggered Non-Overlapping City Overlay Dots with Soft Pulsing Ring */}
                   {cities.map((city, idx) => (
                     <div
                       key={idx}
                       style={{ left: city.x, top: city.y }}
                       className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center group z-10"
                     >
-                      {/* Orange Glowing City Dot */}
-                      <div className="relative shrink-0">
-                        <span className={`block rounded-full ${city.isHQ ? "w-3.5 h-3.5 bg-[#F97316] animate-ping opacity-75" : "w-2.5 h-2.5 bg-[#F97316]"}`} />
-                        <span className={`block rounded-full ${city.isHQ ? "w-3.5 h-3.5 bg-[#F97316] absolute inset-0 shadow-lg" : "w-2.5 h-2.5 bg-[#F97316] absolute inset-0"}`} />
+                      {/* Orange Glowing City Dot with Live Pulse */}
+                      <div className="relative shrink-0 flex items-center justify-center">
+                        <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-[#F97316] opacity-75" />
+                        <span className={`block rounded-full ${city.isHQ ? "w-3.5 h-3.5 bg-[#F97316] relative shadow-lg" : "w-2.5 h-2.5 bg-[#F97316] relative shadow-sm"}`} />
                       </div>
 
                       {/* Non-Colliding City Name Badge */}
@@ -200,20 +207,22 @@ export const TrustInfoSection: React.FC = () => {
                   ))}
                 </div>
 
-                <div className="p-3.5 rounded bg-[#06182F] text-white flex items-center justify-between gap-3">
+                {/* Express Delivery Bar with Hover Shift */}
+                <div className="p-3.5 rounded-xl bg-[#06182F] border border-gray-800 text-white flex items-center justify-between gap-3 hover:border-[#F97316]/50 hover:bg-[#0A203C] transition-all duration-200 group">
                   <div className="flex items-center gap-2">
-                    <Truck className="w-4 h-4 text-[#F97316] shrink-0" />
+                    <Truck className="w-4 h-4 text-[#F97316] shrink-0 group-hover:scale-110 transition-transform" />
                     <span className="text-xs font-bold text-gray-200">Express Commercial Delivery</span>
                   </div>
-                  <span className="text-[10px] font-extrabold text-[#F97316] uppercase tracking-wider bg-[#F97316]/20 px-2 py-0.5 rounded border border-[#F97316]/40">
+                  <span className="text-[10px] font-extrabold text-[#F97316] uppercase tracking-wider bg-[#F97316]/20 px-2.5 py-1 rounded border border-[#F97316]/40">
                     6 Cities +
                   </span>
                 </div>
               </div>
 
+              {/* Delivery Needs Button with Hover Effect */}
               <Link
                 href="/contact"
-                className="w-full bg-[#F97316] hover:bg-[#EA580C] hover:scale-[1.02] text-white text-xs font-extrabold uppercase tracking-wider py-3 px-4 rounded text-center transition-all flex items-center justify-center gap-2 mt-4"
+                className="w-full bg-[#F97316] hover:bg-[#EA580C] hover:scale-[1.02] active:scale-95 text-white text-xs font-extrabold uppercase tracking-wider py-3.5 px-4 rounded-xl text-center shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-4 cursor-pointer"
               >
                 <span>DISCUSS YOUR DELIVERY NEEDS →</span>
               </Link>
@@ -224,37 +233,49 @@ export const TrustInfoSection: React.FC = () => {
 
         {/* 2. Why Businesses Choose Us */}
         <AnimatedSection>
-          <div className="bg-white rounded-lg border border-gray-200 p-6 sm:p-8 lg:p-10">
-            <div className="mb-8">
+          <div className="bg-white rounded-[18px] border border-gray-200/80 p-8 sm:p-10 lg:p-12 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+            
+            {/* Centered Section Header */}
+            <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="text-[11px] font-extrabold tracking-widest text-[#F97316] uppercase mb-1">
                 THE RJ TRADERS ADVANTAGE
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-[#06182F] uppercase tracking-tight font-sans">
                 WHY BUSINESSES CHOOSE US
               </h2>
-              <p className="text-sm text-gray-600 font-normal mt-1">
+              <p className="text-xs sm:text-sm text-gray-600 font-normal mt-1.5 max-w-xl mx-auto leading-relaxed">
                 Practical wholesale and logistics solutions built around the needs of businesses.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {whyChooseUs.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-md bg-[#F5F6F8] border border-gray-200 space-y-1.5 hover:border-[#F97316]/40 transition-colors"
-                >
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#F97316] shrink-0" />
-                    <h3 className="text-xs font-black text-[#06182F] uppercase tracking-wide font-sans">
-                      {item.title}
-                    </h3>
+            {/* Upgraded 4 Feature Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+              {whyChooseUs.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="p-6 rounded-2xl bg-white border border-[#ececec] shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:bg-[#FFF8F5] hover:border-[#F97316]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-200 group flex flex-col justify-between h-full"
+                  >
+                    <div>
+                      {/* Orange Circle Icon Badge */}
+                      <div className="w-11 h-11 rounded-full bg-[#F97316]/10 text-[#F97316] flex items-center justify-center mb-4 group-hover:bg-[#F97316] group-hover:text-white transition-colors duration-200 shadow-2xs">
+                        <Icon className="w-5.5 h-5.5" />
+                      </div>
+                      
+                      <h3 className="text-sm font-black text-[#06182F] uppercase tracking-wide font-sans mb-2 group-hover:text-[#F97316] transition-colors">
+                        {item.title}
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 leading-relaxed font-normal">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-gray-600 leading-relaxed pl-6 font-normal">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
+
           </div>
         </AnimatedSection>
 

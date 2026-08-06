@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ UltraSynth 5W-30 Premium Engine Oil",
     category: "engine-oil",
     categoryName: "Engine Oils",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/engine-oil-5w30.png",
     description: "Fully synthetic high-performance engine oil designed for modern passenger cars and light commercial vehicles. Offers extreme temperature protection and maximum fuel efficiency.",
     specs: {
       "Viscosity Grade": "SAE 5W-30",
@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
       "Pack Sizes": "1L, 4L, 5L, 20L, 208L",
       "Origin": "Formulated in Pakistan"
     },
-    moq: "50 Liters (or 10 Cartons)",
+    moq: "50 Liters (10 Cartons)",
     priceTiers: [
       { quantity: "50 - 200 L", pricePerUnit: "PKR 1,450 / L" },
       { quantity: "201 - 1,000 L", pricePerUnit: "PKR 1,350 / L" },
@@ -43,7 +43,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ HeavyDuty 20W-50 Fleet Engine Oil",
     category: "engine-oil",
     categoryName: "Engine Oils",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/engine-oil-20w50.png",
     description: "Heavy-duty multi-grade diesel and gasoline engine oil engineered for commercial trucks, transport fleets, and high-load industrial vehicles.",
     specs: {
       "Viscosity Grade": "SAE 20W-50",
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ 208L Industrial Steel Drum - Synthetic 10W-40",
     category: "drums",
     categoryName: "Engine Oil Drums (208L)",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/drum-208l-synthetic.png",
     description: "Heavy industrial 208-Liter sealed steel drum filled with RJ Synthetic 10W-40. Built for factory machinery, transport hubs, and workshop supply.",
     specs: {
       "Volume": "208 Liters (55 US Gallons)",
@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ HydroMax AW-46 Anti-Wear Hydraulic Fluid",
     category: "industrial-oils",
     categoryName: "Hydraulic & Gear Oils",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/hydraulic-oil-46.png",
     description: "Premium anti-wear hydraulic oil specially formulated for industrial hydraulic machinery, excavators, injection molding machines, and heavy cranes.",
     specs: {
       "ISO VG Grade": "ISO VG 46",
@@ -115,7 +115,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ GearShield EP 80W-90 Extreme Pressure Fluid",
     category: "industrial-oils",
     categoryName: "Hydraulic & Gear Oils",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/gear-oil-80w90.png",
     description: "High performance extreme-pressure gear lubricant for manual transmissions, differentials, gearboxes, and industrial reduction gear units.",
     specs: {
       "Viscosity Grade": "SAE 80W-90",
@@ -138,7 +138,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ Lithium EP-2 Heavy Industrial Grease",
     category: "lubricants",
     categoryName: "Industrial Lubricants",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/industrial-grease-ep2.png",
     description: "Multipurpose extreme pressure lithium grease suitable for heavy ball bearings, chassis points, conveyor belts, and high-load industrial joints.",
     specs: {
       "NLGI Grade": "NLGI 2",
@@ -162,7 +162,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ AutoTrans ATF Dexron III Automatic Fluid",
     category: "automotive",
     categoryName: "Automotive Fluids",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/atf-dexron-iii.png",
     description: "Premium automatic transmission fluid and power steering fluid formulated for smooth gear shifting and thermal protection in vehicles.",
     specs: {
       "Specification": "Dexron III / Mercon",
@@ -185,7 +185,7 @@ export const PRODUCTS: Product[] = [
     name: "RJ LongLife Concentrated Radiator Coolant 50/50",
     category: "automotive",
     categoryName: "Automotive Fluids",
-    image: "/images/rj-traders-hero.jpg",
+    image: "/images/products/radiator-coolant-green.png",
     description: "Ethylene glycol based anti-freeze and anti-boil radiator coolant for heavy truck radiators, generators, and passenger cars.",
     specs: {
       "Type": "Concentrated OAT Coolant",

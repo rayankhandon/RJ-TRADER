@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Tag } from "lucide-react";
+import { ArrowRight, Tag } from "lucide-react";
 import { AnimatedSection } from "@/components/common/AnimatedSection";
 
 interface PopularProductsProps {
@@ -11,51 +11,83 @@ export const PopularProducts: React.FC<PopularProductsProps> = ({ onOpenQuoteMod
   const products = [
     {
       title: "ENGINE OILS",
-      category: "Automotive Fluids",
-      desc: "High-grade engine oils for petrol, diesel, and heavy-duty commercial transport vehicles.",
+      category: "AUTOMOTIVE FLUIDS",
+      desc: "Synthetic & mineral engine oils for petrol & diesel engines.",
       badge: "BULK AVAILABLE",
-      image: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=600&h=450&q=80",
-      alt: "Motor oil bottle container standing upright in full natural color",
+      image: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Motor oil bottle container product shot",
     },
     {
-      title: "ENGINE OIL DRUMS",
-      category: "Industrial Bulk (208L)",
-      desc: "Standard 208L steel drums of commercial engine oils for fleet operators and industrial clients.",
+      title: "208L OIL DRUMS",
+      category: "INDUSTRIAL BULK",
       badge: "208L DRUMS",
-      image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&h=450&q=80",
-      alt: "Blue and red 208L steel oil drums stacked in full natural color",
+      desc: "Heavy-duty steel drums for industrial lubricant supply.",
+      image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Steel oil drums product shot",
     },
     {
-      title: "LUBRICANTS",
-      category: "Commercial Supply",
-      desc: "Multi-purpose industrial lubricants engineered for friction reduction and machine performance.",
+      title: "INDUSTRIAL LUBRICANTS",
+      category: "COMMERCIAL SUPPLY",
       badge: "HIGH PERFORMANCE",
-      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&h=450&q=80",
-      alt: "Industrial grease tubs and lubricant containers in full natural color",
+      desc: "Multi-purpose machinery grease & friction reduction fluids.",
+      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Industrial grease cans and lubricants product shot",
     },
     {
-      title: "INDUSTRIAL OILS",
-      category: "Heavy Machinery Fluids",
-      desc: "Hydraulic fluids, gear oils, and specialized machinery oils for manufacturing plants.",
+      title: "HYDRAULIC FLUIDS",
+      category: "HEAVY MACHINERY",
       badge: "INDUSTRIAL GRADE",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&h=450&q=80",
-      alt: "Industrial oil canister and hydraulic machinery fluid in full natural color",
+      desc: "Anti-wear hydraulic oil for machinery & manufacturing.",
+      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Hydraulic oil canister product shot",
     },
     {
-      title: "AUTOMOTIVE FLUIDS",
-      category: "Fleet Maintenance",
-      desc: "Transmission fluids, brake fluids, coolants, and specialized automotive care liquids.",
+      title: "AUTOMOTIVE COOLANTS",
+      category: "FLEET MAINTENANCE",
       badge: "COMMERCIAL FLEET",
-      image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=600&h=450&q=80",
-      alt: "Colorful automotive fluid bottles coolants brake fluids in full natural color",
+      desc: "Radiator coolant & antifreeze for commercial vehicles.",
+      image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Automotive coolant bottles product shot",
     },
     {
-      title: "OTHER PRODUCTS",
-      category: "Wholesale & Custom",
-      desc: "Custom industrial packaging materials, containers, and non-standard bulk product sourcing.",
+      title: "GEAR & TRANSMISSION OILS",
+      category: "DRIVETRAIN FLUIDS",
+      badge: "WHOLESALE SUPPLY",
+      desc: "Extreme pressure gear oils for heavy commercial transport.",
+      image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Transmission gear oil container product shot",
+    },
+    {
+      title: "INDUSTRIAL PACKAGING",
+      category: "PACKAGING MATERIAL",
       badge: "CUSTOM SOURCING",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&h=450&q=80",
-      alt: "Stacked industrial packaging boxes and containers in full natural color",
+      desc: "Corrugated boxes, strapping & heavy-duty shipping containers.",
+      image: "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Packaging boxes product shot",
+    },
+    {
+      title: "BRAKE & CLUTCH FLUIDS",
+      category: "SAFETY FLUIDS",
+      badge: "DOT 4 / DOT 3",
+      desc: "High boiling point brake fluid for heavy vehicle braking.",
+      image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Brake fluid bottle product shot",
+    },
+    {
+      title: "PETROCHEMICAL SOLVENTS",
+      category: "CHEMICAL PRODUCTS",
+      badge: "BULK BARRELS",
+      desc: "Industrial degreasers, cleaning solvents & chemical barrels.",
+      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Solvent chemical containers product shot",
+    },
+    {
+      title: "FILTRATION ACCESSORIES",
+      category: "HARDWARE & SPARES",
+      badge: "WHOLESALE ONLY",
+      desc: "Industrial oil filters & bulk fluid transfer accessories.",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&h=400&q=80",
+      alt: "Wholesale hardware and filters storage product shot",
     },
   ];
 
@@ -64,77 +96,87 @@ export const PopularProducts: React.FC<PopularProductsProps> = ({ onOpenQuoteMod
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <AnimatedSection>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-              <div className="text-[11px] font-extrabold tracking-widest text-[#F97316] uppercase mb-1">
-                WHOLESALE CATALOG
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#06182F] uppercase tracking-tight font-sans">
-                EXPLORE OUR WHOLESALE PRODUCTS
-              </h2>
-              <p className="text-sm text-gray-600 font-normal mt-2 max-w-2xl">
-                Browse product categories available for wholesale and commercial requirements.
-              </p>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="text-[11px] font-extrabold tracking-widest text-[#F97316] uppercase mb-1">
+              WHOLESALE CATALOG
             </div>
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-1.5 text-xs font-black text-[#F97316] hover:text-[#EA580C] uppercase tracking-wider transition-colors shrink-0"
-            >
-              <span>VIEW ALL PRODUCTS</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#06182F] uppercase tracking-tight font-sans">
+              EXPLORE OUR WHOLESALE PRODUCTS
+            </h2>
+            <p className="text-sm text-gray-600 font-normal mt-2 max-w-2xl mx-auto">
+              Browse product categories available for wholesale and commercial requirements.
+            </p>
+            <div className="mt-4">
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-1.5 text-xs font-black text-[#F97316] hover:text-[#EA580C] uppercase tracking-wider transition-colors group"
+              >
+                <span>VIEW ALL PRODUCTS</span>
+                <ArrowRight className="w-3.5 h-3.5 transform transition-transform duration-200 group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </AnimatedSection>
 
-        {/* 6 Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 10 Compact Product Cards Grid (5 per row on desktop, 4 on tablet, 2-3 on mobile) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
           {products.map((prod, idx) => (
-            <AnimatedSection key={idx} delayMs={idx * 100}>
-              <div className="bg-[#F5F6F8] rounded-lg border border-gray-200 flex flex-col justify-between hover:border-[#F97316]/60 transition-all group overflow-hidden h-full">
+            <AnimatedSection key={idx} delayMs={idx * 50} className="h-full">
+              <div className="bg-white rounded-xl border border-gray-200 hover:border-gray-300 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden group hover:-translate-y-0.5 h-full">
+                
                 <div>
-                  {/* Card Thumbnail Image (4:3 aspect ratio) in full natural color */}
-                  <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden border-b border-gray-200">
+                  {/* Clean Studio Product Image Container (1:1 ratio) */}
+                  <div className="relative w-full aspect-square bg-[#F8FAFC] border-b border-gray-100 p-3 flex items-center justify-center overflow-hidden">
                     <img
                       src={prod.image}
                       alt={prod.alt}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-lg"
                     />
                     
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                      <span className="text-[10px] font-extrabold text-white uppercase tracking-wider bg-[#F97316] px-2.5 py-1 rounded shadow-md">
+                    {/* Top-left Category Tag (Subtle outline style) */}
+                    <div className="absolute top-2.5 left-2.5 z-10">
+                      <span className="text-[9px] font-bold text-gray-700 bg-white/95 backdrop-blur-xs border border-gray-200 px-2 py-0.5 rounded-md shadow-2xs uppercase tracking-wider">
                         {prod.category}
                       </span>
-                      <span className="text-[9px] font-black text-white uppercase tracking-widest bg-[#06182F]/90 backdrop-blur-xs px-2.5 py-1 rounded shadow-sm border border-white/20">
+                    </div>
+
+                    {/* Top-right Secondary Tag (Subtle outline style) */}
+                    <div className="absolute top-2.5 right-2.5 z-10">
+                      <span className="text-[8px] font-bold text-gray-600 bg-white/90 backdrop-blur-xs border border-gray-200 px-1.5 py-0.5 rounded-md uppercase tracking-wider">
                         {prod.badge}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="text-lg font-black text-[#06182F] uppercase tracking-tight group-hover:text-[#F97316] transition-colors font-sans mb-2">
+                  {/* Card Body (Compact Padding) */}
+                  <div className="p-3.5 sm:p-4">
+                    <h3 className="text-xs sm:text-sm font-bold text-[#06182F] uppercase tracking-tight group-hover:text-[#F97316] transition-colors font-sans line-clamp-1">
                       {prod.title}
                     </h3>
 
-                    <p className="text-xs text-gray-600 leading-relaxed font-normal mb-4">
+                    <p className="text-[11px] sm:text-xs text-gray-500 font-normal line-clamp-1 mt-1">
                       {prod.desc}
                     </p>
+
+                    <div className="flex items-center gap-1 text-[10px] text-gray-400 font-medium mt-2.5">
+                      <Tag className="w-3 h-3 text-[#F97316]" />
+                      <span>Wholesale Tier</span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-4 border-t border-gray-200 flex items-center justify-between mt-auto">
-                  <div className="flex items-center gap-1 text-[11px] text-gray-500 font-medium">
-                    <Tag className="w-3.5 h-3.5 text-[#F97316]" />
-                    <span>Wholesale Tier</span>
-                  </div>
-
+                {/* Compact Request Price Button */}
+                <div className="px-3.5 pb-3.5 pt-0 mt-auto">
                   <button
                     type="button"
                     onClick={onOpenQuoteModal}
-                    className="bg-[#06182F] hover:bg-[#F97316] hover:scale-[1.02] text-white text-xs font-black uppercase tracking-wider px-4 py-2 rounded transition-all flex items-center gap-1.5 cursor-pointer"
+                    className="w-full py-1.5 px-3 bg-[#06182F] hover:bg-[#F97316] text-white text-[11px] font-bold uppercase tracking-wider rounded-md transition-colors flex items-center justify-center gap-1 cursor-pointer"
                   >
-                    <span>REQUEST PRICE →</span>
+                    <span>REQUEST PRICE</span>
+                    <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>
+
               </div>
             </AnimatedSection>
           ))}
