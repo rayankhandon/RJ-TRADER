@@ -52,7 +52,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             className="w-full bg-[#F97316] hover:bg-[#EA580C] text-white font-bold text-xs uppercase tracking-widest py-2.5 px-4 rounded-md shadow-md flex items-center justify-center gap-2"
           >
             <FileText className="w-4 h-4" />
-            <span>REQUEST A QUOTE</span>
+            <span>GET A QUOTE →</span>
           </button>
         </div>
 

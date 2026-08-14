@@ -17,7 +17,7 @@ export default function DeliveryPage() {
   const [isTrackModalOpen, setIsTrackModalOpen] = useState(false);
 
   const coveredRegions = [
-    { city: "Lahore", timeline: "Same Day / 24 Hours", hub: "Central Warehouse Hub", speed: "fast" },
+    { city: "Sadiqabad", timeline: "Same Day / 24 Hours", hub: "Central Warehouse Hub", speed: "fast" },
     { city: "Karachi", timeline: "48 - 72 Hours", hub: "Port & Industrial Hub", speed: "extended" },
     { city: "Faisalabad", timeline: "24 - 48 Hours", hub: "Textile & Lube Depot", speed: "standard" },
     { city: "Rawalpindi / Islamabad", timeline: "24 - 48 Hours", hub: "Northern Region Hub", speed: "standard" },
@@ -134,7 +134,7 @@ export default function DeliveryPage() {
               MAIN COVERAGE HUBS & TIMELINES
             </h2>
             <p className="text-xs sm:text-sm text-gray-600 mt-2 max-w-xl mx-auto font-normal leading-relaxed">
-              Direct dispatch from our central Lahore warehouse to key industrial hubs nationwide.
+              Direct dispatch from our central Sadiqabad warehouse to key industrial hubs nationwide.
             </p>
           </div>
 

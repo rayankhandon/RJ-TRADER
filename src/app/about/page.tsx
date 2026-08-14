@@ -13,7 +13,6 @@ import { FloatingWidgets } from "@/components/common/FloatingWidgets";
 import { AnimatedSection } from "@/components/common/AnimatedSection";
 import { ChevronRight, Award, ShieldCheck, Target, Briefcase } from "lucide-react";
 
-// Self-contained, robust LinkedIn Icon component
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -34,19 +33,19 @@ export default function AboutPage() {
     { 
       name: "Raja Mohammad Javed", 
       title: "Founder & Chief Executive Officer", 
-      exp: "25+ Years in Lubricant Trade",
+      exp: "25+ Years in Lubricant & Spare Parts Trade",
       linkedin: "#"
     },
     { 
       name: "Usman Javed", 
       title: "Head of B2B Operations & Logistics", 
-      exp: "12+ Years Supply Chain Management",
+      exp: "12+ Years Automotive Supply Chain",
       linkedin: "#"
     },
     { 
       name: "Farhan Saeed", 
       title: "Chief Quality Inspector", 
-      exp: "15+ Years ISO Petroleum Testing",
+      exp: "15+ Years Genuine Parts Verification",
       linkedin: "#"
     },
   ];
@@ -62,11 +61,11 @@ export default function AboutPage() {
 
       {/* Header Banner */}
       <div className="bg-[#06182F] text-white py-12 lg:py-16 border-b border-white/10 relative overflow-hidden">
-        {/* Subtle Warehouse Overlay */}
+        {/* Warehouse Overlay */}
         <div className="absolute inset-0 opacity-15 pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80"
-            alt="RJ Traders Facility Background"
+            alt="RJ Traders Warehouse Background"
             className="w-full h-full object-cover"
           />
         </div>
@@ -82,7 +81,7 @@ export default function AboutPage() {
             ABOUT RJ TRADERS
           </h1>
           <p className="text-xs sm:text-sm text-[#B8C4D9] max-w-3xl mt-2 font-normal leading-relaxed">
-            Pakistan’s premier B2B wholesale distributor and industrial packaging partner for lubricants, engine oils, steel drums, and bulk freight solutions.
+            Pakistan’s trusted source for genuine engine oils and quality automotive spare parts, serving workshops, commercial fleets, and auto retailers nationwide.
           </p>
         </div>
       </div>
@@ -100,13 +99,13 @@ export default function AboutPage() {
                   OUR HERITAGE
                 </span>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-[#06182F] tracking-tight leading-tight">
-                  BUILT ON TRUST, QUALITY & NATIONWIDE RELIABILITY
+                  BUILT ON AUTHENTICITY, FAIR PRICING &amp; FAST DELIVERY
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mt-3 font-normal">
-                  Founded in Lahore, Pakistan, RJ Traders has grown into one of the country&apos;s most respected B2B wholesale suppliers. We bridge the gap between heavy industrial manufacturers and regional commercial buyers.
+                  RJ Traders supplies genuine engine oils and spare parts to workshops, fleet operators, and retailers across Pakistan, with a commitment to authenticity, fair pricing, and fast delivery.
                 </p>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-                  Whether supplying 208L steel drums to transport fleets or custom packaging for brand owners, our commitment remains constant: 100% genuine quality, transparent pricing, and zero compromise on delivery timelines.
+                  Founded in Sadiqabad, Punjab, Pakistan, we have established direct distribution links with major lubricant brands (Shell, Mobil, Delo, Castrol) and OEM parts manufacturers, eliminating counterfeits and supply delays.
                 </p>
               </AnimatedSection>
 
@@ -117,17 +116,15 @@ export default function AboutPage() {
                 <AnimatedSection delayMs={100}>
                   <div className="bg-white border border-[#ececec] rounded-2xl p-5 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.1)] hover:border-[#F97316]/30 hover:-translate-y-1.25 transition-all duration-300 ease-out group h-full flex flex-col justify-between cursor-default">
                     <div>
-                      {/* Circular Light Orange Icon Container */}
                       <div className="w-12 h-12 rounded-full bg-[#F97316]/10 text-[#F97316] group-hover:bg-[#F97316] group-hover:text-white flex items-center justify-center mb-3.5 transition-colors duration-300">
                         <Target className="w-6 h-6" />
                       </div>
                       <h4 className="text-xs font-extrabold uppercase text-[#06182F] group-hover:text-[#F97316] transition-colors">
                         OUR MISSION
                       </h4>
-                      {/* Small Orange Underline Accent */}
                       <div className="w-7 h-0.5 bg-[#F97316] rounded-full my-1.5 opacity-90" />
                       <p className="text-[11px] text-gray-500 mt-1 leading-relaxed font-normal">
-                        To empower Pakistani businesses with seamless bulk sourcing, leak-proof packaging, and dependable nationwide logistics.
+                        To empower automotive workshops and commercial fleets with 100% authentic engine oils, reliable spare parts, and fast express dispatch.
                       </p>
                     </div>
                   </div>
@@ -137,17 +134,15 @@ export default function AboutPage() {
                 <AnimatedSection delayMs={200}>
                   <div className="bg-white border border-[#ececec] rounded-2xl p-5 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.1)] hover:border-[#F97316]/30 hover:-translate-y-1.25 transition-all duration-300 ease-out group h-full flex flex-col justify-between cursor-default">
                     <div>
-                      {/* Circular Light Orange Icon Container */}
                       <div className="w-12 h-12 rounded-full bg-[#F97316]/10 text-[#F97316] group-hover:bg-[#F97316] group-hover:text-white flex items-center justify-center mb-3.5 transition-colors duration-300">
                         <ShieldCheck className="w-6 h-6" />
                       </div>
                       <h4 className="text-xs font-extrabold uppercase text-[#06182F] group-hover:text-[#F97316] transition-colors">
-                        QUALITY PROMISE
+                        100% GENUINE PROMISE
                       </h4>
-                      {/* Small Orange Underline Accent */}
                       <div className="w-7 h-0.5 bg-[#F97316] rounded-full my-1.5 opacity-90" />
                       <p className="text-[11px] text-gray-500 mt-1 leading-relaxed font-normal">
-                        Every batch of oil and every drum container is strictly tested to exceed international viscosity and durability standards.
+                        Every container of lubricant and every spare part is sourced directly from factory authorized distributors, guaranteeing zero counterfeits.
                       </p>
                     </div>
                   </div>
@@ -160,14 +155,14 @@ export default function AboutPage() {
             <AnimatedSection delayMs={150}>
               <div className="relative h-[380px] sm:h-[420px] lg:h-[460px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-200/80 group">
                 <Image
-                  src="/images/rj-traders-hero.jpg"
+                  src="/images/rj-traders-hero-composite-ultra.png"
                   alt="RJ Traders Facility"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#06182F]/40 via-transparent to-transparent pointer-events-none" />
 
-                {/* Floating Stat Badge in Bottom-Left Corner */}
+                {/* Floating Stat Badge */}
                 <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-white/95 backdrop-blur-md border border-gray-200/90 p-3.5 sm:p-4 rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.18)] flex items-center gap-3.5 z-20">
                   <div className="w-11 h-11 rounded-xl bg-orange-50 text-[#F97316] flex items-center justify-center shrink-0 shadow-xs">
                     <Award className="w-5.5 h-5.5" />
@@ -177,7 +172,7 @@ export default function AboutPage() {
                       25+ YEARS
                     </span>
                     <span className="text-[10px] text-gray-500 font-extrabold uppercase tracking-wider block mt-1">
-                      ESTABLISHED INDUSTRIAL TRUST
+                      AUTOMOTIVE &amp; LUBRICANT EXCELLENCE
                     </span>
                   </div>
                 </div>
@@ -187,7 +182,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* 2. Team Member Cards Grid (Subtle Gradient, Hover Top Accent Line, Glowing Ring Avatar & Staggered Scroll Entrance) */}
+        {/* 2. Team Member Cards Grid */}
         <section className="bg-white py-16 lg:py-20 border-y border-gray-200/90 relative overflow-hidden">
           <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
@@ -212,12 +207,10 @@ export default function AboutPage() {
                     }}
                   >
                     <div>
-                      {/* Avatar Circle with Glow Ring */}
                       <div className="w-20 h-20 rounded-full bg-[#06182F] text-white flex items-center justify-center mx-auto mb-4 font-black text-2xl border-3 border-[#F97316]/20 group-hover:border-[#F97316]/60 group-hover:shadow-[0_0_0_6px_rgba(255,106,0,0.08)] transition-all duration-300 relative shadow-md">
                         <span>{t.name[0]}</span>
                       </div>
 
-                      {/* Name & Title */}
                       <h3 className="text-base sm:text-lg font-extrabold uppercase text-[#06182F] group-hover:text-[#F97316] transition-colors leading-snug">
                         {t.name}
                       </h3>
@@ -227,13 +220,11 @@ export default function AboutPage() {
                     </div>
 
                     <div>
-                      {/* Experience Line with Briefcase Icon Divider */}
                       <div className="mt-5 pt-4 border-t border-gray-200/80 flex items-center justify-center gap-1.5 text-xs text-gray-600 font-semibold">
                         <Briefcase className="w-3.5 h-3.5 text-[#F97316]" />
                         <span>{t.exp}</span>
                       </div>
 
-                      {/* LinkedIn Link Icon */}
                       <div className="mt-3.5 flex justify-center">
                         <a
                           href={t.linkedin}

@@ -16,23 +16,23 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     id: "engine-oil-5w30",
-    name: "RJ UltraSynth 5W-30 Premium Engine Oil",
+    name: "Shell Helix Ultra 5W-30 Synthetic Engine Oil",
     category: "engine-oil",
     categoryName: "Engine Oils",
     image: "/images/products/engine-oil-5w30.png",
-    description: "Fully synthetic high-performance engine oil designed for modern passenger cars and light commercial vehicles. Offers extreme temperature protection and maximum fuel efficiency.",
+    description: "Fully synthetic high-performance engine oil designed for modern passenger cars and commercial vehicles. Offers extreme temperature protection and maximum fuel efficiency.",
     specs: {
       "Viscosity Grade": "SAE 5W-30",
       "API Standard": "API SP / SN Plus",
       "ACEA Rating": "ACEA C3 / A3/B4",
-      "Pack Sizes": "1L, 4L, 5L, 20L, 208L",
-      "Origin": "Formulated in Pakistan"
+      "Pack Sizes": "1L, 4L, 5L, 208L Drum",
+      "Origin": "Genuine Authorized Dealer Sourcing"
     },
-    moq: "50 Liters (10 Cartons)",
+    moq: "5 Cartons (20 Liters)",
     priceTiers: [
-      { quantity: "50 - 200 L", pricePerUnit: "PKR 1,450 / L" },
-      { quantity: "201 - 1,000 L", pricePerUnit: "PKR 1,350 / L" },
-      { quantity: "1,000+ L (Bulk Drum)", pricePerUnit: "PKR 1,220 / L" }
+      { quantity: "20 - 100 L", pricePerUnit: "PKR 2,450 / L" },
+      { quantity: "101 - 500 L", pricePerUnit: "PKR 2,250 / L" },
+      { quantity: "500+ L (Bulk Drum)", pricePerUnit: "PKR 2,100 / L" }
     ],
     inStock: true,
     grade: "Synthetic 5W-30",
@@ -40,167 +40,165 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "engine-oil-20w50",
-    name: "RJ HeavyDuty 20W-50 Fleet Engine Oil",
+    name: "Chevron Delo 400 20W-50 Fleet Engine Oil",
     category: "engine-oil",
     categoryName: "Engine Oils",
     image: "/images/products/engine-oil-20w50.png",
-    description: "Heavy-duty multi-grade diesel and gasoline engine oil engineered for commercial trucks, transport fleets, and high-load industrial vehicles.",
+    description: "Heavy-duty multi-grade diesel and gasoline engine oil engineered for commercial trucks, transport fleets, and high-load industrial machinery.",
     specs: {
       "Viscosity Grade": "SAE 20W-50",
       "API Standard": "API CI-4 / SL",
       "Application": "Diesel Fleets & Heavy Duty Vehicles",
       "Pack Sizes": "4L, 10L, 20L, 208L Steel Drum",
-      "Origin": "Manufactured in Pakistan"
+      "Origin": "Original Factory Sealed"
     },
-    moq: "100 Liters (or 208L Drum)",
+    moq: "10 Cartons (40 Liters)",
     priceTiers: [
-      { quantity: "100 - 500 L", pricePerUnit: "PKR 980 / L" },
-      { quantity: "501 - 2,000 L", pricePerUnit: "PKR 890 / L" },
-      { quantity: "2,000+ L (Bulk Fleet)", pricePerUnit: "PKR 820 / L" }
+      { quantity: "40 - 200 L", pricePerUnit: "PKR 1,350 / L" },
+      { quantity: "201 - 1,000 L", pricePerUnit: "PKR 1,220 / L" },
+      { quantity: "1,000+ L (Bulk Fleet)", pricePerUnit: "PKR 1,100 / L" }
     ],
     inStock: true,
     grade: "Mineral 20W-50",
     badge: "Popular Fleet Choice"
   },
   {
-    id: "drum-208l-synthetic",
-    name: "RJ 208L Industrial Steel Drum - Synthetic 10W-40",
-    category: "drums",
-    categoryName: "Engine Oil Drums (208L)",
+    id: "drum-208l-mobil1",
+    name: "Mobil 1 ESP 5W-30 Engine Oil 208L Steel Drum",
+    category: "engine-oil",
+    categoryName: "Engine Oils",
     image: "/images/products/drum-208l-synthetic.png",
-    description: "Heavy industrial 208-Liter sealed steel drum filled with RJ Synthetic 10W-40. Built for factory machinery, transport hubs, and workshop supply.",
+    description: "Heavy industrial 208-Liter sealed steel drum filled with Mobil 1 ESP 5W-30. Engineered for workshop oil dispensers, fleets, and auto service hubs.",
     specs: {
       "Volume": "208 Liters (55 US Gallons)",
       "Container": "Heavy Duty Sealed Steel Drum",
-      "Viscosity": "SAE 10W-40",
+      "Viscosity": "SAE 5W-30 Synthetic",
       "Gross Weight": "approx. 195 kg",
-      "Certification": "ISO 9001 Quality Assured"
+      "Certification": "Genuine Factory Sealed Warranty"
     },
-    moq: "2 Drums (416 Liters)",
+    moq: "1 Drum (208 Liters)",
     priceTiers: [
-      { quantity: "2 - 5 Drums", pricePerUnit: "PKR 210,000 / Drum" },
-      { quantity: "6 - 15 Drums", pricePerUnit: "PKR 198,000 / Drum" },
-      { quantity: "16+ Drums (Full Truckload)", pricePerUnit: "PKR 185,000 / Drum" }
+      { quantity: "1 - 3 Drums", pricePerUnit: "PKR 380,000 / Drum" },
+      { quantity: "4 - 10 Drums", pricePerUnit: "PKR 360,000 / Drum" },
+      { quantity: "11+ Drums (Truckload)", pricePerUnit: "PKR 345,000 / Drum" }
     ],
     inStock: true,
     grade: "208L Steel Drum",
-    badge: "Wholesale Bulk"
+    badge: "Wholesale Bulk Drum"
   },
   {
-    id: "hydraulic-oil-46",
-    name: "RJ HydroMax AW-46 Anti-Wear Hydraulic Fluid",
-    category: "industrial-oils",
-    categoryName: "Hydraulic & Gear Oils",
-    image: "/images/products/hydraulic-oil-46.png",
-    description: "Premium anti-wear hydraulic oil specially formulated for industrial hydraulic machinery, excavators, injection molding machines, and heavy cranes.",
-    specs: {
-      "ISO VG Grade": "ISO VG 46",
-      "Type": "Anti-Wear (AW) Hydraulic Fluid",
-      "Thermal Stability": "High Oxidation Resistance",
-      "Pack Sizes": "20L Jerrycan, 208L Steel Drum",
-      "Origin": "Pakistan Wholesale Supply"
-    },
-    moq: "4 Jerrycans (80 Liters)",
-    priceTiers: [
-      { quantity: "80 - 400 L", pricePerUnit: "PKR 850 / L" },
-      { quantity: "401 - 1,200 L", pricePerUnit: "PKR 780 / L" },
-      { quantity: "1,200+ L", pricePerUnit: "PKR 710 / L" }
-    ],
-    inStock: true,
-    grade: "ISO VG 46",
-    badge: "Industrial Grade"
-  },
-  {
-    id: "gear-oil-80w90",
-    name: "RJ GearShield EP 80W-90 Extreme Pressure Fluid",
-    category: "industrial-oils",
-    categoryName: "Hydraulic & Gear Oils",
-    image: "/images/products/gear-oil-80w90.png",
-    description: "High performance extreme-pressure gear lubricant for manual transmissions, differentials, gearboxes, and industrial reduction gear units.",
-    specs: {
-      "Viscosity Grade": "SAE 80W-90",
-      "API Standard": "API GL-5 / GL-4",
-      "Features": "Extreme Pressure & Anti-Foam Additives",
-      "Pack Sizes": "4L, 20L, 208L Drum",
-      "Origin": "Formulated in Pakistan"
-    },
-    moq: "40 Liters",
-    priceTiers: [
-      { quantity: "40 - 200 L", pricePerUnit: "PKR 920 / L" },
-      { quantity: "201 - 800 L", pricePerUnit: "PKR 840 / L" },
-      { quantity: "800+ L", pricePerUnit: "PKR 760 / L" }
-    ],
-    inStock: true,
-    grade: "EP 80W-90"
-  },
-  {
-    id: "industrial-grease-ep2",
-    name: "RJ Lithium EP-2 Heavy Industrial Grease",
-    category: "lubricants",
-    categoryName: "Industrial Lubricants",
+    id: "oil-filter-mann-w712",
+    name: "Mann-Filter W712 High Efficiency Oil Filter",
+    category: "oil-filters",
+    categoryName: "Oil Filters",
     image: "/images/products/industrial-grease-ep2.png",
-    description: "Multipurpose extreme pressure lithium grease suitable for heavy ball bearings, chassis points, conveyor belts, and high-load industrial joints.",
+    description: "OEM quality spin-on oil filter offering maximum dirt holding capacity and engine wear protection for European and Asian vehicle engines.",
     specs: {
-      "NLGI Grade": "NLGI 2",
-      "Thickener Type": "Lithium Soap Base",
-      "Dropping Point": "190°C+",
-      "Pack Sizes": "1 kg Pail, 15 kg Bucket, 180 kg Drum",
-      "Origin": "RJ Traders Wholesale"
+      "Filter Type": "Spin-On Oil Filter",
+      "Filtration Efficiency": "99.2% at 20 Microns",
+      "Bypass Valve": "Integrated 1.0 Bar Valve",
+      "Compatibility": "Toyota, Honda, Suzuki, VW",
+      "Origin": "Mann-Filter Original"
     },
-    moq: "3 Buckets (45 kg)",
+    moq: "20 Pieces (1 Carton)",
     priceTiers: [
-      { quantity: "45 - 150 kg", pricePerUnit: "PKR 880 / kg" },
-      { quantity: "151 - 500 kg", pricePerUnit: "PKR 810 / kg" },
-      { quantity: "500+ kg", pricePerUnit: "PKR 740 / kg" }
+      { quantity: "20 - 100 Pcs", pricePerUnit: "PKR 950 / Pc" },
+      { quantity: "101 - 500 Pcs", pricePerUnit: "PKR 850 / Pc" },
+      { quantity: "500+ Pcs", pricePerUnit: "PKR 750 / Pc" }
     ],
     inStock: true,
-    grade: "NLGI 2 EP Grease",
-    badge: "Heavy Duty"
+    grade: "OEM Grade Filter",
+    badge: "Top Seller Filter"
   },
   {
-    id: "atf-dexron-iii",
-    name: "RJ AutoTrans ATF Dexron III Automatic Fluid",
-    category: "automotive",
-    categoryName: "Automotive Fluids",
-    image: "/images/products/atf-dexron-iii.png",
-    description: "Premium automatic transmission fluid and power steering fluid formulated for smooth gear shifting and thermal protection in vehicles.",
+    id: "brake-pad-ceramic-front",
+    name: "Akebono Heavy-Duty Ceramic Front Brake Pads",
+    category: "brake-parts",
+    categoryName: "Brake Pads & Discs",
+    image: "/images/products/gear-oil-80w90.png",
+    description: "Ultra-quiet ceramic brake pads providing superior stopping power, zero dust accumulation, and extended rotor life for commercial & passenger cars.",
     specs: {
-      "Specification": "Dexron III / Mercon",
-      "Color": "Red",
-      "Application": "Automatic Gearboxes & Power Steering",
-      "Pack Sizes": "1L, 4L, 20L",
-      "Origin": "Formulated in Pakistan"
+      "Material": "Premium Ceramic Compound",
+      "Position": "Front Axle Set",
+      "Noise Shim": "Dual-Layer Anti-Squeal Shim",
+      "Certification": "ECE R90 Certified",
+      "Origin": "Genuine Authorized Sourcing"
     },
-    moq: "36 Liters",
+    moq: "10 Sets",
     priceTiers: [
-      { quantity: "36 - 180 L", pricePerUnit: "PKR 1,150 / L" },
-      { quantity: "181 - 600 L", pricePerUnit: "PKR 1,050 / L" },
-      { quantity: "600+ L", pricePerUnit: "PKR 960 / L" }
+      { quantity: "10 - 50 Sets", pricePerUnit: "PKR 4,500 / Set" },
+      { quantity: "51 - 200 Sets", pricePerUnit: "PKR 3,950 / Set" },
+      { quantity: "200+ Sets", pricePerUnit: "PKR 3,500 / Set" }
     ],
     inStock: true,
-    grade: "Dexron III"
+    grade: "Ceramic Grade",
+    badge: "High Performance"
   },
   {
-    id: "radiator-coolant-green",
-    name: "RJ LongLife Concentrated Radiator Coolant 50/50",
-    category: "automotive",
-    categoryName: "Automotive Fluids",
+    id: "brake-disc-vented-pair",
+    name: "Brembo Vented Front Brake Discs (Pair)",
+    category: "brake-parts",
+    categoryName: "Brake Pads & Discs",
+    image: "/images/products/hydraulic-oil-46.png",
+    description: "High-carbon vented front brake rotors engineered for maximum heat dissipation, smooth braking response, and resistance to warping under heavy loads.",
+    specs: {
+      "Rotor Type": "Vented High-Carbon Rotor",
+      "Surface Finish": "UV Coated Anti-Corrosion",
+      "Diameter": "275 mm / 295 mm",
+      "Pair Weight": "approx. 14.5 kg",
+      "Brand": "Brembo Genuine"
+    },
+    moq: "5 Pairs",
+    priceTiers: [
+      { quantity: "5 - 20 Pairs", pricePerUnit: "PKR 12,500 / Pair" },
+      { quantity: "21 - 80 Pairs", pricePerUnit: "PKR 11,200 / Pair" },
+      { quantity: "80+ Pairs", pricePerUnit: "PKR 9,900 / Pair" }
+    ],
+    inStock: true,
+    grade: "High Carbon"
+  },
+  {
+    id: "suspension-shock-absorber",
+    name: "KYB Excel-G Heavy Duty Shock Absorber Set",
+    category: "suspension",
+    categoryName: "Suspension Parts",
     image: "/images/products/radiator-coolant-green.png",
-    description: "Ethylene glycol based anti-freeze and anti-boil radiator coolant for heavy truck radiators, generators, and passenger cars.",
+    description: "Twin-tube gas shock absorbers designed to restore original vehicle handling, damp road vibrations, and enhance safety for commercial fleets.",
     specs: {
-      "Type": "Concentrated OAT Coolant",
-      "Boiling Point": "125°C",
-      "Freezing Point": "-35°C",
-      "Pack Sizes": "1L, 4L, 20L Jerrycan",
-      "Origin": "Manufactured in Pakistan"
+      "Design": "Twin-Tube Nitrogen Gas Pressurized",
+      "Piston Diameter": "30 mm Hardened Chrome Rod",
+      "Application": "Front & Rear Axles available",
+      "Origin": "KYB Japan / OEM Approved"
     },
-    moq: "5 Cartons (60 Liters)",
+    moq: "4 Sets (8 Shocks)",
     priceTiers: [
-      { quantity: "60 - 300 L", pricePerUnit: "PKR 650 / L" },
-      { quantity: "301 - 1,000 L", pricePerUnit: "PKR 580 / L" },
-      { quantity: "1,000+ L", pricePerUnit: "PKR 520 / L" }
+      { quantity: "4 - 15 Sets", pricePerUnit: "PKR 16,800 / Set" },
+      { quantity: "16 - 50 Sets", pricePerUnit: "PKR 14,900 / Set" },
+      { quantity: "50+ Sets", pricePerUnit: "PKR 13,500 / Set" }
     ],
     inStock: true,
-    grade: "Anti-Freeze Coolant"
+    grade: "Heavy Duty Gas"
+  },
+  {
+    id: "timing-belt-gates-kit",
+    name: "Gates PowerGrip Timing Belt & Tensioner Kit",
+    category: "belts-hoses",
+    categoryName: "Belts & Hoses",
+    image: "/images/products/atf-dexron-iii.png",
+    description: "Complete timing belt replacement kit including high-tensile HSN timing belt, tensioner pulley, and idler bearings for engine overhaul maintenance.",
+    specs: {
+      "Belt Material": "HSN Rubber with Fiberglass Cord",
+      "Kit Components": "Belt, Tensioner, Idler Pulley",
+      "Service Life": "100,000 km Mileage Rating",
+      "Brand": "Gates Official"
+    },
+    moq: "10 Kits",
+    priceTiers: [
+      { quantity: "10 - 40 Kits", pricePerUnit: "PKR 5,800 / Kit" },
+      { quantity: "41 - 150 Kits", pricePerUnit: "PKR 5,100 / Kit" },
+      { quantity: "150+ Kits", pricePerUnit: "PKR 4,400 / Kit" }
+    ],
+    inStock: true,
+    grade: "OE Replacement"
   }
 ];

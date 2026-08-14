@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className={`w-full bg-white border-b border-gray-200 sticky top-0 z-40 transition-all duration-300 animate-load-nav ${
       isScrolled ? "shadow-md bg-white/95 backdrop-blur-md border-gray-300" : "shadow-xs"
     }`}>
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-1 lg:py-1.5">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-0.5 sm:py-1 lg:py-1">
         <div className="flex items-center justify-between gap-3 lg:gap-6">
           
           {/* Logo & Category Selector (Left) */}
@@ -163,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({
                   Track Order
                 </span>
                 <span className="text-[11px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
-                  Track Your Shipment
+                  Track Your Order
                 </span>
               </div>
             </div>
@@ -184,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
                   Request Quote
                 </span>
                 <span className="text-[11px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
-                  Get Wholesale Pricing
+                  Get a Price Quote
                 </span>
               </div>
             </button>
@@ -205,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({
                   My Cart
                 </span>
                 <span className="text-[11px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
-                  View Your Cart
+                  View Cart
                 </span>
               </div>
             </div>

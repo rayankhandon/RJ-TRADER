@@ -58,7 +58,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
               B2B INQUIRY FORM
             </span>
             <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white">
-              REQUEST A QUOTE
+              GET A PRICE QUOTE
             </h2>
             <p className="text-xs text-[#B8C4D9] font-normal mt-1 max-w-md leading-relaxed">
               Tell us what products or services your business requires and we&apos;ll review your inquiry.

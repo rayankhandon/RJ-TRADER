@@ -66,7 +66,7 @@ export default function ContactPage() {
             CONTACT RJ TRADERS
           </h1>
           <p className="text-xs sm:text-sm text-[#B8C4D9] max-w-2xl mt-2 font-normal leading-relaxed">
-            Get in touch with our B2B sales desk in Lahore, Pakistan. We are ready to answer your inquiries regarding bulk supply, custom packaging, and freight dispatch.
+            Get in touch with our B2B sales desk in Sadiqabad, Punjab, Pakistan. We are ready to answer your inquiries regarding bulk supply, custom packaging, and freight dispatch.
           </p>
         </div>
       </div>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                           LOCATION
                         </span>
                         <span className="font-bold text-white text-xs mt-0.5 block leading-relaxed">
-                          RJ Traders Central Hub, Industrial Estate, {CONTACT_INFO.location}
+                          RJ Traders Central Hub, Bypass Road, {CONTACT_INFO.location}
                         </span>
                       </div>
                     </div>
@@ -176,13 +176,13 @@ export default function ContactPage() {
                     <MapPin className="w-5.5 h-5.5" />
                   </div>
                   <h4 className="text-xs font-extrabold uppercase text-[#06182F] group-hover:text-[#F97316] transition-colors">
-                    LAHORE WAREHOUSE & DEPOT
+                    SADIQABAD WAREHOUSE & DEPOT
                   </h4>
                   <p className="text-[11.5px] text-gray-500 mt-1 font-normal leading-relaxed">
-                    Main Multan Road / Raiwind Road Industrial Hub, Lahore, Pakistan
+                    Main National Highway / Karkhana Hub, Sadiqabad, Punjab, Pakistan
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Lahore+Multan+Road+Pakistan"
+                    href="https://maps.google.com/?q=Sadiqabad+Punjab+Pakistan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-3.5 inline-flex items-center gap-1.5 text-[11px] font-extrabold text-[#F97316] hover:text-[#ea580c] uppercase tracking-wider transition-colors"

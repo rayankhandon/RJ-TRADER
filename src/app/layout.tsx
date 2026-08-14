@@ -1,22 +1,14 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://rj-trader.vercel.app"),
   title: {
-    default: "RJ Traders | Wholesale, Packaging & Logistics Solutions Pakistan",
+    default: "RJ Traders | Engine Oil & Genuine Spare Parts Wholesale Pakistan",
     template: "%s | RJ Traders",
   },
   description:
-    "RJ Traders provides wholesale products, industrial supplies, professional packaging and nationwide logistics solutions for businesses across Pakistan.",
+    "RJ Traders is Pakistan's trusted wholesale supplier of genuine engine oils, oil filters, brake pads, suspension parts, and heavy fleet lubricants for workshops and retailers.",
   applicationName: "RJ Traders",
   icons: {
     icon: [
@@ -27,9 +19,9 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "RJ Traders | Wholesale, Packaging & Logistics Solutions Pakistan",
+    title: "RJ Traders | Engine Oil & Genuine Spare Parts Wholesale Pakistan",
     description:
-      "RJ Traders provides wholesale products, industrial supplies, professional packaging and nationwide logistics solutions for businesses across Pakistan.",
+      "RJ Traders is Pakistan's trusted wholesale supplier of genuine engine oils, oil filters, brake pads, suspension parts, and heavy fleet lubricants for workshops and retailers.",
     siteName: "RJ Traders",
     images: [
       {
@@ -48,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} antialiased h-full`} suppressHydrationWarning>
+    <html lang="en" className="antialiased h-full font-sans" suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-white text-gray-900 font-sans selection:bg-orange-500 selection:text-white" suppressHydrationWarning>
         {children}
       </body>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -9,7 +10,17 @@
   --color-border-gray: #E5E7EB;
   --color-text-dark: #111827;
   --color-text-muted: #6B7280;
-  --font-poppins: var(--font-poppins), sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-display: 'Archivo Black', 'Outfit', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+.font-display {
+  font-family: 'Archivo Black', 'Outfit', sans-serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
 }
 
 :root {
@@ -18,12 +29,13 @@
   --primary-orange: #F97316;
   --bg-gray: #F5F6F8;
   --border-color: #E5E7EB;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
 body {
   background-color: #FFFFFF;
   color: #111827;
-  font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
 }
 
@@ -158,6 +170,22 @@ body {
   animation: loadFadeInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
 }
 
+@keyframes featureBoxSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-feature-box {
+  opacity: 0;
+  animation: featureBoxSlideUp 0.5s ease-out forwards;
+}
+
 .animate-load-stat-badge-1 {
   opacity: 0;
   animation: loadFadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
@@ -168,3 +196,17 @@ body {
   animation: loadFadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
 }
 
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}

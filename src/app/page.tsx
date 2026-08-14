@@ -6,9 +6,11 @@ import { Header } from "@/components/layout/Header";
 import { Navbar } from "@/components/layout/Navbar";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Hero } from "@/components/home/Hero";
+import { CategoryIconRow } from "@/components/home/CategoryIconRow";
 import { BenefitsBar } from "@/components/home/BenefitsBar";
-import { ServicesSection } from "@/components/home/ServicesSection";
 import { PopularProducts } from "@/components/home/PopularProducts";
+import { BrandsStrip } from "@/components/home/BrandsStrip";
+import { HomeBlogSection } from "@/components/home/HomeBlogSection";
 import { PackagingCtaBanner } from "@/components/home/PackagingCtaBanner";
 import { TrustInfoSection } from "@/components/home/TrustInfoSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
@@ -24,7 +26,7 @@ export default function Home() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F6F8]">
+    <div className="min-h-screen flex flex-col bg-[#F5F6F8]" suppressHydrationWarning>
       {/* 1. Slim Top Information Bar */}
       <TopBar />
 
@@ -44,29 +46,35 @@ export default function Home() {
         {/* 4. Full-Width Background Hero Section */}
         <Hero onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* 5. Benefits / Trust Strip */}
+        {/* 5. 6-Card Feature Row (Engine Oil & Spare Parts Focus) */}
         <BenefitsBar />
 
-        {/* 6. How Can We Help Your Business? (Services Grid) */}
-        <ServicesSection onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        {/* 6. "Shop by Category" Section */}
+        <CategoryIconRow />
 
-        {/* 7. Popular Wholesale Products (Category Cards) */}
+        {/* 7. Products Section with Client-Side Tabbed Filtering */}
         <PopularProducts onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
         {/* 8. Packaging & Delivery CTA Banner */}
         <PackagingCtaBanner onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* 9. Industries, Nationwide Delivery, Why Choose Us */}
-        <TrustInfoSection />
+        {/* 9. Wholesale Clientele, Stats & CTA (Who We Supply) */}
+        <TrustInfoSection onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* 10. Client Testimonials */}
+        {/* 10. From Our Blog Section */}
+        <HomeBlogSection />
+
+        {/* 11. Top Brands We Deal In Logo Strip */}
+        <BrandsStrip />
+
+        {/* 12. Client Testimonials */}
         <TestimonialsSection />
 
-        {/* 11. Statistics Bar */}
+        {/* 13. Statistics Bar */}
         <StatsBar />
       </main>
 
-      {/* 12. Footer */}
+      {/* 14. Footer */}
       <Footer />
 
       {/* Floating Action Buttons (WhatsApp + Sticky Mobile Bar + Scroll Top) */}

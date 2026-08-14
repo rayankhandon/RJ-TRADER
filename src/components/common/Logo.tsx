@@ -16,12 +16,12 @@ export const Logo: React.FC<LogoProps> = ({ className = "", size = "header", lig
       <Image
         src="/images/rj-traders-logo.png"
         alt="RJ Traders Logo"
-        width={350}
-        height={350}
+        width={400}
+        height={400}
         className={`object-contain transition-transform duration-200 group-hover:scale-[1.02] ${
           isFooter
             ? "h-[95px] sm:h-[110px] lg:h-[120px] w-auto filter brightness-0 invert"
-            : "h-[48px] sm:h-[56px] lg:h-[62px] w-auto"
+            : "h-[58px] sm:h-[68px] lg:h-[76px] w-auto"
         }`}
         priority
       />

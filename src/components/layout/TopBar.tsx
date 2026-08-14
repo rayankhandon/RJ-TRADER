@@ -27,6 +27,11 @@ export const TopBar: React.FC = () => {
           </a>
         </div>
 
+        {/* Center: Announcement Bar */}
+        <div className="hidden md:flex items-center text-xs font-semibold text-gray-200 tracking-wide">
+          <span>Genuine Engine Oil • Truck Spare Parts • Reliable Service</span>
+        </div>
+
         {/* Right Side: Location */}
         <div className="flex items-center gap-2 text-gray-300 font-medium text-xs">
           <MapPin className="w-3.5 h-3.5 text-[#F97316]" />

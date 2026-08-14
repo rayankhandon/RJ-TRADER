@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
 
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* 1. Slim Newsletter / CTA Strip Above Main Footer */}
+        {/* 1. Newsletter / CTA Strip Above Main Footer */}
         <AnimatedSection>
           <div className="bg-[#0B2545] border border-white/15 rounded-2xl p-7 sm:p-9 lg:p-10 mb-14 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             {/* Left Text Block */}
@@ -32,19 +32,18 @@ export const Footer: React.FC = () => {
                 <div className="w-8 h-8 rounded-lg bg-[#F97316]/20 border border-[#F97316]/40 flex items-center justify-center text-[#F97316] shrink-0 animate-pulse">
                   <Mail className="w-4.5 h-4.5" />
                 </div>
-                <span>GET WHOLESALE DEALS & CATALOG UPDATES</span>
+                <span>GET WHOLESALE DEALS &amp; CATALOG UPDATES</span>
               </h3>
               <p className="text-xs sm:text-sm text-[#B8C4D9] font-normal leading-relaxed">
-                Subscribe to receive bulk pricing alerts, new packaging options, and logistics updates directly in your inbox.
+                Subscribe to receive bulk pricing alerts, new engine oil arrivals, and spare parts stock updates directly in your inbox.
               </p>
             </div>
 
-            {/* Right Form: Stacks cleanly on Mobile (full width), Inline on Desktop */}
+            {/* Right Form */}
             <form
               onSubmit={(e) => e.preventDefault()}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full lg:w-auto shrink-0"
             >
-              {/* Input with Inner Left Mail Icon */}
               <div className="relative w-full sm:w-80 lg:w-96">
                 <Mail className="w-4 h-4 text-white/50 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
@@ -54,7 +53,6 @@ export const Footer: React.FC = () => {
                 />
               </div>
 
-              {/* Subscribe Button */}
               <button
                 type="submit"
                 className="w-full sm:w-auto bg-[#F97316] hover:bg-[#EA580C] hover:scale-[1.03] active:scale-95 text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider px-6 py-[14px] rounded-xl transition-all duration-300 shrink-0 flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer"
@@ -74,23 +72,22 @@ export const Footer: React.FC = () => {
             <div className="space-y-2">
               <Logo size="footer" />
               <p className="text-xs font-bold text-[#F97316] italic tracking-wide">
-                Wholesale. Packaging. Logistics. Simplified.
+                Engine Oil &amp; Genuine Spare Parts Wholesale.
               </p>
             </div>
 
             <p className="text-xs text-gray-300 leading-relaxed max-w-sm font-normal">
-              RJ Traders is Pakistan's premier B2B wholesale supplier of commercial lubricants, oil drums, industrial fluids, and custom packaging solutions.
+              RJ Traders is Pakistan&apos;s trusted B2B wholesale supplier of genuine engine oils, oil filters, brake pads, suspension parts, and heavy fleet lubricants.
             </p>
 
             {/* Business Location Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2545] border border-white/10 text-xs text-gray-300 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#F97316] shrink-0" />
-              <span>Location: <strong className="text-white font-semibold">Lahore, Punjab, Pakistan</strong></span>
+              <span>Location: <strong className="text-white font-semibold">Sadiqabad, Punjab, Pakistan</strong></span>
             </div>
 
-            {/* Social Media Buttons (Clean Inline Brand SVGs) */}
+            {/* Social Media Buttons */}
             <div className="pt-1 flex items-center gap-2.5">
-              {/* Facebook */}
               <a
                 href="#"
                 aria-label="Facebook"
@@ -101,7 +98,6 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
 
-              {/* Instagram */}
               <a
                 href="#"
                 aria-label="Instagram"
@@ -114,7 +110,6 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="#"
                 aria-label="LinkedIn"
@@ -126,7 +121,6 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
 
-              {/* WhatsApp */}
               <a
                 href="https://wa.me/923211234567"
                 target="_blank"
@@ -153,7 +147,27 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-gray-300 font-normal">
               <li>
                 <Link href="/" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Home Page
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/products?category=engine-oil" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Engine Oil
+                </Link>
+              </li>
+              <li>
+                <Link href="/products?category=oil-filters" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Truck Spare Parts
+                </Link>
+              </li>
+              <li>
+                <Link href="/brands" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Authorized Brands
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Blog &amp; Insights
                 </Link>
               </li>
               <li>
@@ -162,23 +176,8 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/packaging" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Packaging Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/delivery" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Delivery Network
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
                   Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Request a Quote
                 </Link>
               </li>
             </ul>
@@ -194,33 +193,33 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2.5 text-xs text-gray-300 font-normal">
               <li>
-                <Link href="/products" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Engine Oils (20W-50)
+                <Link href="/products?category=engine-oil" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Engine Oils
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Industrial Oil Drums (208L)
+                <Link href="/products?category=oil-filters" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Oil Filters
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Hydraulic & Gear Fluids
+                <Link href="/products?category=brake-parts" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Brake Pads &amp; Discs
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Commercial Lubricants
+                <Link href="/products?category=suspension" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Suspension Parts
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Steel & Plastic Drums
+                <Link href="/products?category=belts-hoses" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Belts &amp; Hoses
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Wholesale Catalog
+                <Link href="/products?category=electrical" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
+                  Electrical Parts
                 </Link>
               </li>
             </ul>
@@ -239,7 +238,7 @@ export const Footer: React.FC = () => {
                 <div className="w-7 h-7 rounded-full bg-[#F97316]/15 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shrink-0">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
-                <span>Lahore, Punjab, Pakistan</span>
+                <span>Sadiqabad, Punjab, Pakistan</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-7 h-7 rounded-full bg-[#F97316]/15 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shrink-0">
@@ -264,7 +263,7 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* 3. Bottom Bar with Subtle Gradient Divider */}
+        {/* 3. Bottom Bar */}
         <div className="pt-6 border-t border-gradient border-white/10 relative">
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#F97316]/50 to-transparent" />
           

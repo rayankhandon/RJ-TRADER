@@ -21,13 +21,14 @@ import {
   Search,
   Layers,
   Droplet,
-  Container,
-  Cog,
-  Wrench,
-  Car,
+  Fuel,
+  Wind,
+  Snowflake,
+  Disc,
+  CircleDot,
+  Circle,
   Package,
   Truck,
-  Grid,
   Sparkles,
   FileText
 } from "lucide-react";
@@ -49,28 +50,31 @@ function ProductsPageContent() {
     }
   }, [searchParams]);
 
-  // Helper function to render matching category icon with consistent strokeWidth and style
+  // Distinct icon mapping per category
   const getCategoryIcon = (catId: string, isSelected: boolean) => {
-    const iconClass = `w-4 h-4 shrink-0 transition-colors ${isSelected ? "text-[#F97316]" : "text-gray-400 group-hover:text-[#F97316]"
-      }`;
+    const iconClass = `w-4 h-4 shrink-0 transition-colors ${
+      isSelected ? "text-[#F97316]" : "text-gray-400 group-hover:text-[#F97316]"
+    }`;
 
     switch (catId) {
       case "engine-oil":
         return <Droplet className={iconClass} strokeWidth={2} />;
-      case "drums":
-        return <Container className={iconClass} strokeWidth={2} />;
-      case "lubricants":
-        return <Cog className={iconClass} strokeWidth={2} />;
-      case "industrial-oils":
-        return <Wrench className={iconClass} strokeWidth={2} />;
-      case "automotive":
-        return <Car className={iconClass} strokeWidth={2} />;
-      case "packaging":
-        return <Package className={iconClass} strokeWidth={2} />;
-      case "logistics":
-        return <Truck className={iconClass} strokeWidth={2} />;
+      case "oil-filter":
+        return <Filter className={iconClass} strokeWidth={2} />;
+      case "fuel-filter":
+        return <Fuel className={iconClass} strokeWidth={2} />;
+      case "air-filter":
+        return <Wind className={iconClass} strokeWidth={2} />;
+      case "coolant":
+        return <Snowflake className={iconClass} strokeWidth={2} />;
+      case "drain-plug-washer":
+        return <Disc className={iconClass} strokeWidth={2} />;
+      case "oil-filter-o-ring":
+        return <CircleDot className={iconClass} strokeWidth={2} />;
+      case "fuel-filter-o-ring":
+        return <Circle className={iconClass} strokeWidth={2.5} />;
       default:
-        return <Grid className={iconClass} strokeWidth={2} />;
+        return <Layers className={iconClass} strokeWidth={2} />;
     }
   };
 
@@ -136,10 +140,21 @@ function ProductsPageContent() {
 
             {/* Left Sidebar Filter (Wider Column w-88 xl:w-96 = ~352-384px) */}
             <aside className="w-full lg:w-88 xl:w-96 shrink-0">
-              <div className="bg-white border border-gray-200/90 rounded-xl p-4 sm:p-5 shadow-xs sticky top-24">
+              <style>{`
+                @keyframes slideRight {
+                  0% { opacity: 0; transform: translateX(-16px); }
+                  100% { opacity: 1; transform: translateX(0); }
+                }
+                @keyframes slideDownHeader {
+                  0% { opacity: 0; transform: translateY(-8px); }
+                  100% { opacity: 1; transform: translateY(0); }
+                }
+              `}</style>
+
+              <div className="bg-white border border-gray-200/90 rounded-xl p-4 sm:p-5 shadow-xs sticky top-24 animate-[slideRight_0.5s_ease-out_forwards]">
 
                 {/* Filter Header */}
-                <div className="flex items-center justify-between pb-3.5 border-b border-gray-100 mb-3.5">
+                <div className="flex items-center justify-between pb-3.5 border-b border-gray-100 mb-3.5 animate-[slideDownHeader_0.4s_ease-out_forwards]">
                   <div className="flex items-center gap-2 font-black uppercase text-xs sm:text-sm text-[#0A1A2F]">
                     <Filter className="w-4 h-4 text-[#F97316]" />
                     <span>CATEGORIES</span>
@@ -156,44 +171,49 @@ function ProductsPageContent() {
 
                 {/* Interactive Category Filter List */}
                 <div className="space-y-1.5">
-                  {/* All Products Item */}
+                  {/* All Products Row */}
                   <button
                     onClick={() => setSelectedCategory("all")}
-                    className={`w-full text-left px-3.5 py-3 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-between cursor-pointer gap-3 group border-l-4 ${selectedCategory === "all"
+                    className={`w-full text-left px-3.5 py-3.5 rounded-lg text-xs font-bold uppercase transition-all duration-200 flex items-center justify-between cursor-pointer gap-3 group border-l-4 ${
+                      selectedCategory === "all"
                         ? "bg-[#06182F] text-white shadow-sm border-l-[#F97316]"
-                        : "text-gray-700 hover:bg-orange-50/80 hover:text-[#F97316] border-l-transparent"
-                      }`}
+                        : "text-gray-700 hover:bg-[#F97316]/[0.04] hover:text-[#F97316] border-l-transparent"
+                    }`}
                   >
                     <div className="flex items-center gap-3 min-w-0 flex-1">
                       <Layers className={`w-4 h-4 shrink-0 transition-colors ${selectedCategory === "all" ? "text-[#F97316]" : "text-gray-400 group-hover:text-[#F97316]"}`} strokeWidth={2} />
                       <span className="text-[12px] font-bold leading-tight">ALL WHOLESALE PRODUCTS</span>
                     </div>
-                    <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded-md shrink-0 whitespace-nowrap ${selectedCategory === "all" ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500 group-hover:bg-[#F97316]/10 group-hover:text-[#F97316]"
-                      }`}>
-                      {PRODUCTS.length}
+                    <span className={`min-w-[60px] text-center text-[10px] font-extrabold px-2.5 py-1 rounded-md shrink-0 whitespace-nowrap transition-colors ${
+                      selectedCategory === "all" ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500 group-hover:bg-[#F97316]/10 group-hover:text-[#F97316]"
+                    }`}>
+                      {PRODUCTS.length} ITEMS
                     </span>
                   </button>
 
                   <div className="my-2 border-t border-gray-100" />
 
                   {/* Individual Interactive Categories */}
-                  {CATEGORIES.map((cat) => {
+                  {CATEGORIES.map((cat, idx) => {
                     const isSelected = selectedCategory === cat.id;
                     return (
                       <button
                         key={cat.id}
+                        style={{ animationDelay: `${idx * 40}ms` }}
                         onClick={() => setSelectedCategory(cat.id)}
-                        className={`w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-between cursor-pointer gap-3 group border-l-4 ${isSelected
+                        className={`w-full text-left px-3.5 py-3.5 rounded-lg text-xs font-bold uppercase transition-all duration-200 flex items-center justify-between cursor-pointer gap-3 group border-l-4 animate-feature-box ${
+                          isSelected
                             ? "bg-[#06182F] text-white shadow-sm border-l-[#F97316]"
-                            : "text-gray-700 hover:bg-orange-50/80 hover:text-[#F97316] border-l-transparent"
-                          }`}
+                            : "text-gray-700 hover:bg-[#F97316]/[0.04] hover:text-[#F97316] border-l-transparent"
+                        }`}
                       >
                         <div className="flex items-center gap-3 min-w-0 flex-1">
                           {getCategoryIcon(cat.id, isSelected)}
                           <span className="text-[12px] font-bold leading-tight">{cat.name}</span>
                         </div>
-                        <span className={`text-[9.5px] font-extrabold px-2 py-0.5 rounded-md shrink-0 whitespace-nowrap ${isSelected ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500 group-hover:bg-[#F97316]/10 group-hover:text-[#F97316]"
-                          }`}>
+                        <span className={`min-w-[60px] text-center text-[9.5px] font-extrabold px-2.5 py-1 rounded-md shrink-0 whitespace-nowrap transition-colors ${
+                          isSelected ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500 group-hover:bg-[#F97316]/10 group-hover:text-[#F97316]"
+                        }`}>
                           {cat.count}
                         </span>
                       </button>
@@ -201,9 +221,9 @@ function ProductsPageContent() {
                   })}
                 </div>
 
-                {/* Bulk Support Card in Sidebar */}
-                <div className="mt-7 p-4 sm:p-5 bg-[#06182F] text-white rounded-xl border border-white/10 relative overflow-hidden shadow-md">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#F97316]/10 rounded-full blur-xl pointer-events-none" />
+                {/* Bulk Support Card in Sidebar with Pulsing Glow */}
+                <div className="mt-7 p-4 sm:p-5 bg-[#06182F] text-white rounded-xl border border-[#F97316]/40 relative overflow-hidden shadow-[0_0_15px_rgba(249,115,22,0.25)] animate-[pulse_3s_ease-in-out_infinite]">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#F97316]/15 rounded-full blur-xl pointer-events-none" />
                   <span className="text-[9.5px] uppercase font-black tracking-wider text-[#F97316] flex items-center gap-1">
                     <Sparkles className="w-3 h-3" /> NEED BULK TRUCKLOAD?
                   </span>
@@ -213,7 +233,7 @@ function ProductsPageContent() {
                   </p>
                   <button
                     onClick={() => setIsQuoteModalOpen(true)}
-                    className="w-full mt-3.5 h-9 bg-[#F97316] hover:bg-[#ea580c] hover:scale-[1.02] active:scale-95 text-white text-[11px] font-extrabold uppercase tracking-wider rounded-lg flex items-center justify-center gap-1.5 transition-all shadow-md cursor-pointer"
+                    className="w-full mt-3.5 h-9 bg-[#F97316] hover:bg-[#ea580c] hover:scale-[1.03] active:scale-95 text-white text-[11px] font-extrabold uppercase tracking-wider rounded-lg flex items-center justify-center gap-1.5 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
                   >
                     <span>REQUEST BULK QUOTE</span>
                   </button>

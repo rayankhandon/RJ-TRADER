@@ -1,91 +1,93 @@
+"use client";
+
 import React from "react";
-import { Package, ShieldCheck, Truck, Sparkles, Headphones, Percent } from "lucide-react";
+import { ShieldCheck, Tag, Truck, CheckCircle2, Headphones, Boxes } from "lucide-react";
 import { AnimatedSection } from "@/components/common/AnimatedSection";
 
 export const BenefitsBar: React.FC = () => {
   const benefits = [
     {
-      num: "01",
-      icon: Package,
-      title: "Bulk Supply",
-      desc: "Order in volume, save on every unit.",
-    },
-    {
-      num: "02",
       icon: ShieldCheck,
-      title: "Packaging Solutions",
-      desc: "Custom packaging built for safety and shelf appeal.",
+      title: "GENUINE PRODUCTS",
+      desc: "Original & Quality Assured",
     },
     {
-      num: "03",
+      icon: Tag,
+      title: "WHOLESALE PRICING",
+      desc: "Competitive Bulk Rates for Workshops, Fleets, and Retailers",
+    },
+    {
       icon: Truck,
-      title: "Nationwide Delivery",
-      desc: "Reliable shipping to every corner of the country.",
+      title: "FAST DELIVERY",
+      desc: "Reliable Nationwide Shipping",
     },
     {
-      num: "04",
-      icon: Sparkles,
-      title: "Quality Products",
-      desc: "Every item checked before it reaches you.",
+      icon: CheckCircle2,
+      title: "QUALITY CHECKED",
+      desc: "Every Part and Oil Batch Inspected Before Shipping",
     },
     {
-      num: "05",
       icon: Headphones,
-      title: "Business Support",
-      desc: "A dedicated team that actually responds.",
+      title: "EXPERT SUPPORT",
+      desc: "Knowledgeable Assistance When You Need It",
     },
     {
-      num: "06",
-      icon: Percent,
-      title: "Competitive Pricing",
-      desc: "Wholesale rates without the wholesale hassle.",
+      icon: Boxes,
+      title: "WIDE SELECTION",
+      desc: "Thousands of Truck Parts and Oil Grades Available",
     },
   ];
 
   return (
-    <section className="w-full bg-[#F5F6F8] border-b border-gray-200 pt-7 pb-7">
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+    <section className="w-full bg-[#F7F8FA] border-b border-[#E5E7EB] py-14 lg:py-16">
+      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <AnimatedSection>
+          <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-12">
+            <div className="text-[11px] font-extrabold tracking-widest text-[#F97316] uppercase mb-1.5">
+              WHY CHOOSE RJ TRADERS
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#06182F] uppercase tracking-tight font-sans">
+              EVERYTHING YOU NEED TO KEEP YOUR TRUCK MOVING
+            </h2>
+          </div>
+        </AnimatedSection>
+
+        {/* 6 Equal-Width Cards Grid (1 col Mobile, 3 cols Tablet, 6 cols Desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4.5 lg:gap-5 items-stretch">
           {benefits.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <AnimatedSection key={idx} delayMs={idx * 80}>
-                <div className="bg-white rounded-lg border border-gray-200/90 p-4 flex flex-col justify-between hover:border-[#F97316]/50 shadow-xs hover:shadow-md transition-all group relative overflow-hidden h-full">
-                  {/* Subtle Dotted Pattern in lower portion */}
-                  <div className="absolute inset-x-0 bottom-0 h-14 bg-[radial-gradient(#F97316_1px,transparent_1px)] [background-size:10px_10px] opacity-[0.12] pointer-events-none group-hover:opacity-20 transition-opacity" />
-
-                  {/* Top Portion: Icon + Title + Accent + Desc */}
-                  <div className="relative z-10 space-y-1.5">
-                    {/* Soft Circular Icon Container */}
-                    <div className="w-8.5 h-8.5 rounded-full bg-[#F97316]/12 border border-[#F97316]/25 flex items-center justify-center text-[#F97316] group-hover:bg-[#F97316] group-hover:text-white group-hover:border-[#F97316] transition-all shrink-0">
-                      <Icon className="w-4 h-4" />
+              <AnimatedSection key={idx} delayMs={idx * 70} className="h-full">
+                <div className="bg-white rounded-[16px] border border-[#E5E7EB] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] hover:border-[#F97316]/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between h-full cursor-default">
+                  
+                  <div>
+                    {/* Soft Light-Orange Circular Icon Container */}
+                    <div className="w-11 h-11 rounded-full bg-[#F97316]/10 text-[#F97316] group-hover:bg-[#F97316] group-hover:text-white transition-all duration-300 flex items-center justify-center shrink-0 mb-4 shadow-2xs">
+                      <Icon className="w-5 h-5" />
                     </div>
 
-                    <div>
-                      {/* Bold Title */}
-                      <h3 className="text-xs font-black text-[#06182F] uppercase tracking-tight font-sans">
-                        {item.title}
-                      </h3>
+                    {/* Benefit Title */}
+                    <h3 className="text-[14px] font-black text-[#06182F] uppercase tracking-tight font-sans group-hover:text-[#F97316] transition-colors leading-snug">
+                      {item.title}
+                    </h3>
 
-                      {/* Small Orange Underline Accent */}
-                      <div className="w-5 h-0.5 bg-[#F97316] rounded-full my-1 group-hover:w-7 transition-all" />
+                    {/* Small Orange Accent Line */}
+                    <div className="w-6 h-0.5 bg-[#F97316] rounded-full my-2 group-hover:w-10 transition-all duration-300" />
 
-                      {/* Description */}
-                      <p className="text-[11px] text-gray-600 leading-snug font-normal">
-                        {item.desc}
-                      </p>
-                    </div>
+                    {/* Benefit Description */}
+                    <p className="text-[13px] text-gray-600 leading-relaxed font-normal mt-1">
+                      {item.desc}
+                    </p>
                   </div>
 
-                  {/* Large Faded Number in Bottom-Right Corner */}
-                  <span className="absolute bottom-1.5 right-2.5 text-2xl font-black font-mono text-gray-200/80 group-hover:text-[#F97316]/20 transition-colors pointer-events-none select-none z-0">
-                    {item.num}
-                  </span>
                 </div>
               </AnimatedSection>
             );
           })}
         </div>
+
       </div>
     </section>
   );
