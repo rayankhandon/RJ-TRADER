@@ -302,16 +302,16 @@ function ProductsPageContent() {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                   {filteredProducts.map((product) => (
                     <div
                       key={product.id}
-                      className="bg-white border border-[#ececec] rounded-xl overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 h-full"
+                      className="bg-white border border-gray-200/90 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 h-full"
                     >
                       <div>
-                        {/* Dark Navy Gradient Image Container */}
+                        {/* Studio Compact Product Image Container (215–225px) */}
                         <div
-                          className="relative w-full h-48 sm:h-52 overflow-hidden p-3 flex items-center justify-center border-b border-white/10"
+                          className="relative w-full h-[195px] sm:h-[210px] lg:h-[225px] overflow-hidden p-3 flex items-center justify-center border-b border-white/10"
                           style={{
                             background: "linear-gradient(135deg, #06182F 0%, #0D284B 60%, #06182F 100%)"
                           }}
@@ -324,43 +324,43 @@ function ProductsPageContent() {
                             alt={product.name}
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-contain p-3 group-hover:scale-105 transition-transform duration-500 relative z-10"
+                            className="object-contain p-2.5 group-hover:scale-105 transition-transform duration-500 relative z-10"
                           />
 
                           {/* Top-Left Status Badge */}
                           {product.badge && (
-                            <span className="absolute top-2.5 left-2.5 bg-[#F97316] text-white text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded shadow-md z-20">
+                            <span className="absolute top-2.5 left-2.5 bg-[#F97316] text-white text-[8.5px] font-black uppercase tracking-wider px-2 py-0.5 rounded-[5px] shadow-xs z-20">
                               {product.badge}
                             </span>
                           )}
 
                           {/* Bottom-Right MOQ Badge with Box Icon */}
-                          <span className="absolute bottom-2.5 right-2.5 bg-[#06182F]/90 text-white text-[9.5px] font-extrabold px-2.5 py-1 rounded-md backdrop-blur-xs shadow-md z-20 border border-white/20 flex items-center gap-1.5">
+                          <span className="absolute bottom-2.5 right-2.5 bg-[#06182F]/90 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-[5px] backdrop-blur-xs shadow-xs z-20 border border-white/20 flex items-center gap-1">
                             <Package className="w-3 h-3 text-[#F97316]" />
                             <span>MOQ: {product.moq}</span>
                           </span>
                         </div>
 
                         {/* Card Details Body */}
-                        <div className="p-4 sm:p-5">
-                          <span className="text-[10px] font-black text-[#F97316] uppercase tracking-wider block">
+                        <div className="p-3.5 sm:p-4 space-y-1">
+                          <span className="text-[9.5px] font-black text-[#F97316] uppercase tracking-wider block">
                             {product.categoryName}
                           </span>
-                          <h3 className="text-sm sm:text-base font-extrabold text-[#06182F] uppercase tracking-tight line-clamp-2 leading-snug group-hover:text-[#F97316] transition-colors min-h-[2.5rem] mt-1">
+                          <h3 className="text-xs sm:text-[13px] font-extrabold text-[#06182F] uppercase tracking-tight line-clamp-2 leading-snug group-hover:text-[#F97316] transition-colors min-h-[2.2rem]">
                             <Link href={`/products/${product.id}`}>{product.name}</Link>
                           </h3>
 
                           {/* Small Orange Underline Accent */}
-                          <div className="w-9 h-0.5 bg-[#F97316] rounded-full my-2 opacity-90" />
+                          <div className="w-7 h-0.5 bg-[#F97316] rounded-full my-1 opacity-90" />
 
-                          <p className="text-[11.5px] text-gray-600 line-clamp-2 leading-relaxed min-h-[2.2rem] font-normal mt-1">
+                          <p className="text-[11px] text-gray-600 line-clamp-2 leading-relaxed min-h-[2.1rem] font-normal">
                             {product.description}
                           </p>
 
                           {/* Tightened Spec Tag Pills */}
-                          <div className="mt-3.5 pt-3 border-t border-black/[0.08] flex flex-wrap gap-1.5">
+                          <div className="mt-2.5 pt-2 border-t border-black/[0.06] flex flex-wrap gap-1">
                             {Object.entries(product.specs).slice(0, 2).map(([k, v], i) => (
-                              <span key={i} className="text-[10px] bg-[#f8f9fa] text-gray-700 font-bold px-2.5 py-0.5 rounded border border-[#e9ecef] truncate max-w-full">
+                              <span key={i} className="text-[9.5px] bg-[#f8f9fa] text-gray-700 font-bold px-2 py-0.5 rounded border border-[#e9ecef] truncate max-w-full">
                                 {k}: {v}
                               </span>
                             ))}
@@ -368,20 +368,20 @@ function ProductsPageContent() {
                         </div>
                       </div>
 
-                      {/* Card Action Pair (Outlined DETAILS + Solid Orange GET QUOTE) */}
-                      <div className="p-4 sm:p-5 pt-3 sm:pt-3.5 border-t border-black/[0.08] flex items-center gap-3 w-full">
+                      {/* Card Action Pair */}
+                      <div className="p-3.5 sm:p-4 pt-2 sm:pt-2 border-t border-black/[0.06] flex items-center gap-2 w-full">
                         <Link
                           href={`/products/${product.id}`}
-                          className="flex-1 h-10 border-[1.5px] border-[#06182F] bg-transparent hover:bg-[#f3f4f6] text-[#06182F] text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer shrink group/btn px-4"
+                          className="flex-1 h-8.5 border-[1.5px] border-[#06182F] bg-transparent hover:bg-[#f3f4f6] text-[#06182F] text-[10.5px] font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer shrink group/btn px-2.5"
                         >
                           <span>DETAILS</span>
-                          <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                          <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform duration-200" />
                         </Link>
                         <button
                           onClick={() => setIsQuoteModalOpen(true)}
-                          className="h-10 bg-[#F97316] hover:bg-[#ea580c] hover:scale-105 active:scale-95 text-white text-xs font-extrabold uppercase tracking-wider px-4 rounded-lg transition-all shadow-sm shrink-0 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1.5"
+                          className="h-8.5 bg-[#F97316] hover:bg-[#ea580c] hover:scale-102 active:scale-95 text-white text-[10.5px] font-extrabold uppercase tracking-wider px-3 rounded-lg transition-all shadow-xs shrink-0 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1"
                         >
-                          <FileText className="w-3.5 h-3.5" />
+                          <FileText className="w-3 h-3" />
                           <span>GET QUOTE</span>
                         </button>
                       </div>

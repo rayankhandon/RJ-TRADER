@@ -104,42 +104,34 @@ export const TrustInfoSection: React.FC<TrustInfoSectionProps> = () => {
   const customerCategories = [
     {
       title: "AUTO REPAIR WORKSHOPS",
-      description: "Engine oils, filters & genuine spare parts for daily workshop needs.",
       icon: Wrench,
     },
     {
       title: "FLEET & TRANSPORT HUBS",
-      description: "Bulk lubricants and maintenance parts for commercial fleets.",
       icon: Truck,
     },
     {
       title: "COMMERCIAL VEHICLE OUTLETS",
-      description: "Products for trucks, buses, vans and heavy-duty vehicles.",
       icon: Car,
     },
     {
       title: "SPARE PART RETAILERS",
-      description: "Reliable wholesale supply with competitive bulk pricing.",
       icon: Boxes,
     },
     {
       title: "CAR DEALERSHIPS",
-      description: "Genuine oils and maintenance parts for dealership service centers.",
       icon: Building2,
     },
     {
       title: "LOGISTICS COMPANIES",
-      description: "Lubricants and spare parts for high-mileage transport operations.",
       icon: Package,
     },
     {
       title: "CONSTRUCTION & HEAVY EQUIPMENT",
-      description: "Heavy-duty engine oils and parts for machinery and equipment.",
       icon: HardHat,
     },
     {
       title: "AGRICULTURAL & TRACTOR BUSINESSES",
-      description: "Reliable lubricants and replacement parts for tractors and agricultural vehicles.",
       icon: Tractor,
     },
   ];
@@ -232,59 +224,50 @@ export const TrustInfoSection: React.FC<TrustInfoSectionProps> = () => {
     <section className="w-full bg-[#F8FAFC] py-10 lg:py-14 border-b border-[#E5E7EB] relative">
       <div className="w-full max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
 
-        {/* SECTION HEADER - LEFT ALIGNED */}
-        <AnimatedSection>
-          <div className="text-left space-y-1">
-            <span className="text-[11px] font-extrabold tracking-widest text-[#FF6B00] uppercase block">
-              WHOLESALE CLIENTELE
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#071A33] uppercase tracking-tight font-sans">
-              INDUSTRIES WE SUPPLY
-            </h2>
-            <p className="text-xs sm:text-sm text-[#5B6472] font-normal leading-relaxed">
-              RJ Traders is the trusted supply partner for workshops, fleet operators, transport companies, and retailers across Pakistan.
-            </p>
-          </div>
-        </AnimatedSection>
-
         {/* MAIN TWO-COLUMN LAYOUT */}
         <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
 
-            {/* LEFT SIDE — 8 CUSTOMER CARDS */}
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 h-full">
+            {/* LEFT COLUMN: Heading + Subtitle + 8 Cards */}
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
+              
+              {/* Heading & Description */}
+              <div className="text-left space-y-1">
+                <span className="text-[11px] font-extrabold tracking-widest text-[#FF6B00] uppercase block">
+                  WHOLESALE CLIENTELE
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-[#071A33] uppercase tracking-tight font-sans">
+                  INDUSTRIES WE SUPPLY
+                </h2>
+                <p className="text-xs sm:text-sm text-[#5B6472] font-normal leading-relaxed">
+                  RJ Traders is the trusted supply partner for workshops, fleet operators, transport companies, and retailers across Pakistan.
+                </p>
+              </div>
+
+              {/* 8 Customer Cards Grid (2 Cols x 4 Rows) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
                 {customerCategories.map((cat, idx) => {
                   const Icon = cat.icon;
                   return (
-                    <AnimatedSection key={idx} delayMs={idx * 100} className="h-full">
+                    <AnimatedSection key={idx} delayMs={idx * 75} className="w-full">
                       <div
-                        className="group bg-white rounded-[16px] border border-[#E5E7EB] p-4.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#FF6B00] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] hover:-translate-y-[6px] transition-all duration-300 ease-out flex flex-col justify-between h-full cursor-default"
+                        className="group bg-white rounded-[16px] border border-[#E5E7EB] px-4 py-3 sm:px-4.5 sm:py-3.5 h-[85px] sm:h-[88px] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#FF6B00] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] hover:-translate-y-[3px] transition-all duration-300 ease-out flex items-center gap-3.5 cursor-default"
                       >
-                        <div className="space-y-2.5">
-                          {/* Icon & Title Row */}
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-xl bg-[#FFF1E7] text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 shadow-2xs">
-                              <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
-                            </div>
-                            <h3 className="text-xs sm:text-[13px] font-extrabold text-[#071A33] group-hover:text-[#FF6B00] transition-colors duration-300 uppercase tracking-tight leading-snug">
-                              {cat.title}
-                            </h3>
-                          </div>
-
-                          {/* Short Description */}
-                          <p className="text-[11.5px] text-[#5B6472] font-normal leading-relaxed">
-                            {cat.description}
-                          </p>
+                        <div className="w-10 h-10 rounded-xl bg-[#FFF1E7] text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 shadow-2xs">
+                          <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
                         </div>
+                        <h3 className="text-xs sm:text-[13px] font-extrabold text-[#071A33] group-hover:text-[#FF6B00] transition-colors duration-300 uppercase tracking-tight leading-snug">
+                          {cat.title}
+                        </h3>
                       </div>
                     </AnimatedSection>
                   );
                 })}
               </div>
+
             </div>
 
-            {/* RIGHT SIDE — NATIONWIDE DELIVERY MAP PANEL (SaaS Dashboard Look) */}
+            {/* RIGHT COLUMN: Nationwide Delivery Map Panel */}
             <div className="lg:col-span-5 bg-[#071A33] text-white rounded-[20px] border border-white/10 p-5 sm:p-6 flex flex-col justify-between h-full min-h-[480px] shadow-xl relative overflow-hidden">
 
               {/* Header: Title + Subtitle */}

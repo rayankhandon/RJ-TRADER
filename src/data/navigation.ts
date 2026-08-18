@@ -51,7 +51,6 @@ export const NAV_ITEMS: NavItem[] = [
       { label: "All Product Categories", href: "/products", description: "Explore complete spare parts catalog" },
     ],
   },
-  { label: "BRANDS", href: "/brands" },
   { label: "BLOG", href: "/blog" },
   { label: "ABOUT US", href: "/about" },
   { label: "CONTACT US", href: "/contact" },

@@ -155,9 +155,10 @@ export default function AboutPage() {
             <AnimatedSection delayMs={150}>
               <div className="relative h-[380px] sm:h-[420px] lg:h-[460px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-200/80 group">
                 <Image
-                  src="/images/rj-traders-hero-composite-ultra.png"
-                  alt="RJ Traders Facility"
+                  src="/images/brands/hino_banner_ultra_high_quality_1700x650.png"
+                  alt="RJ Traders HINO & Spare Parts"
                   fill
+                  style={{ objectPosition: "center right" }}
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#06182F]/40 via-transparent to-transparent pointer-events-none" />

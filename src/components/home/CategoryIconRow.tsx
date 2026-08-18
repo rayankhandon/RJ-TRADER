@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { AnimatedSection } from "@/components/common/AnimatedSection";
 
 export interface CategoryItem {
@@ -74,70 +74,88 @@ export const CATEGORIES_LIST: CategoryItem[] = [
 
 export const CategoryIconRow: React.FC = () => {
   return (
-    <section className="w-full bg-white py-16 lg:py-20 border-b border-[#E5E7EB]">
+    <section className="w-full bg-[#F8F9FA] py-12 lg:py-16 border-b border-[#E5E7EB]">
       <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Centered Section Header */}
+
+        {/* Premium Section Header */}
         <AnimatedSection>
-          <div className="flex flex-col items-center text-center mb-10 pb-6 border-b border-gray-100">
-            <div className="text-[11px] font-extrabold tracking-widest text-[#ff7a1a] uppercase mb-1.5">
-              PRODUCT CATEGORIES
+          <div className="relative flex flex-col items-center text-center mb-8 pb-6 border-b border-gray-200/80">
+            {/* Perfectly Centered Title, Accent & Description Group */}
+            <div className="flex flex-col items-center text-center max-w-xl mx-auto">
+              <div className="text-[11px] font-extrabold tracking-widest text-[#F97316] uppercase mb-1">
+                PRODUCT CATEGORIES
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#06182F] uppercase tracking-tight font-sans">
+                SHOP BY CATEGORY
+              </h2>
+              {/* Centered Small 45px Orange Accent Line */}
+              <div
+                style={{ width: "45px", height: "3px", backgroundColor: "#F97316" }}
+                className="rounded-full my-2.5 mx-auto"
+              />
+              <p className="text-xs sm:text-sm text-gray-600 font-normal max-w-xl text-center">
+                Find genuine engine oils, high-efficiency filters, coolants, washers, and O-rings for your vehicle needs.
+              </p>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#06182F] uppercase tracking-tight font-sans">
-              SHOP BY CATEGORY
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-600 font-normal mt-1.5 max-w-xl text-center">
-              Find genuine engine oils, high-efficiency filters, coolants, washers, and O-rings for your vehicle needs.
-            </p>
-            
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 px-5 py-2.5 mt-5 rounded-lg bg-[#06182F] hover:bg-[#ff7a1a] text-white text-xs font-bold uppercase tracking-wider transition-colors duration-300 shadow-sm cursor-pointer shrink-0 group"
-            >
-              <span>View All Categories</span>
-              <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-            </Link>
+
+            {/* Right-Aligned VIEW ALL CATEGORIES Button */}
+            <div className="mt-4 sm:mt-0 sm:absolute sm:right-0 sm:bottom-6">
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#06182F] hover:bg-[#F97316] border border-[#06182F] hover:border-[#F97316] text-white text-xs font-extrabold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer shrink-0 group"
+              >
+                <span>VIEW ALL CATEGORIES</span>
+                <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </AnimatedSection>
 
-        {/* 8 Category Cards Grid (4 Cols x 2 Rows Desktop, 2 Cols Mobile/Tablet) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 sm:gap-6">
-          {CATEGORIES_LIST.map((cat, idx) => {
-            return (
-              <AnimatedSection key={cat.id} delayMs={idx * 70} className="h-full">
-                <Link
-                  href={cat.href}
-                  className="w-full bg-white rounded-[14px] border border-black/[0.05] p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] hover:border-[#ff7a1a] hover:-translate-y-[6px] transition-all duration-300 ease-out group flex flex-col items-center text-center cursor-pointer h-full justify-between overflow-hidden"
-                >
-                  {/* Framed Image Container with Soft Gradient Background */}
-                  <div className="w-full aspect-square max-w-[110px] rounded-[10px] bg-gradient-to-br from-[#f8f9fb] to-[#eef0f4] border border-black/[0.06] shadow-[inset_0_1px_3px_rgba(0,0,0,0.04)] flex items-center justify-center p-2.5 mb-3.5 overflow-hidden shrink-0 transition-colors duration-300">
-                    <img
-                      src={`${cat.image}?v=3`}
-                      alt={cat.title}
-                      decoding="async"
-                      className="w-full h-full object-contain object-center drop-shadow-xs transition-transform duration-400 ease-out group-hover:scale-110"
-                    />
-                  </div>
+        {/* Centered 8 Category Cards Grid: 4 Cols Desktop, 2 Cols Tablet, 1 Col Mobile */}
+        <div className="max-w-[1220px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
+            {CATEGORIES_LIST.map((cat, idx) => {
+              return (
+                <AnimatedSection key={cat.id} delayMs={idx * 50} className="h-full">
+                  <Link
+                    href={cat.href}
+                    className="w-full bg-white rounded-[12px] border border-gray-200/80 p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] hover:border-[#F97316]/80 hover:-translate-y-[3px] transition-all duration-300 ease-out group flex flex-col justify-between h-[162px] cursor-pointer overflow-hidden"
+                  >
+                    {/* Compact ~98px Light-Gray Image Container */}
+                    <div className="w-full h-[98px] rounded-[8px] bg-[#F4F6F8] group-hover:bg-[#EBF0F7] border border-gray-100 flex items-center justify-center p-2.5 overflow-hidden relative transition-colors duration-300 shrink-0">
+                      <img
+                        src={`${cat.image}?v=3`}
+                        alt={cat.title}
+                        decoding="async"
+                        className="w-full h-full object-contain object-center drop-shadow-xs group-hover:scale-[1.05] transition-transform duration-300 ease-out"
+                      />
+                    </div>
 
-                  {/* Title & Count */}
-                  <div className="flex flex-col items-center justify-center w-full">
-                    <h3 className="text-xs sm:text-sm font-black text-[#06182F] uppercase tracking-[0.3px] group-hover:text-[#ff7a1a] transition-colors duration-300 leading-snug font-sans line-clamp-2 min-h-[32px] flex items-center justify-center">
-                      {cat.title}
-                    </h3>
-                    <span className="text-[10px] sm:text-[11px] text-gray-500 font-semibold uppercase tracking-wider block mt-2">
-                      {cat.count}
-                    </span>
-                  </div>
+                    {/* Compact Card Content: Name & Count on Left, Small Arrow on Right */}
+                    <div className="flex items-center justify-between w-full pt-1.5 pb-0.5">
+                      <div className="flex flex-col min-w-0 pr-2">
+                        <h3 className="text-xs sm:text-[13px] font-extrabold text-[#06182F] uppercase tracking-tight group-hover:text-[#F97316] transition-colors duration-200 truncate font-sans">
+                          {cat.title}
+                        </h3>
+                        <span className="text-[10.5px] text-gray-500 font-medium block mt-0.5">
+                          {cat.count}
+                        </span>
+                      </div>
 
-                  {/* Subtle Bottom Accent Indicator */}
-                  <div className="w-4 h-0.5 bg-[#ff7a1a] rounded-full mt-3 opacity-0 group-hover:opacity-100 group-hover:w-8 transition-all duration-300" />
-                </Link>
-              </AnimatedSection>
-            );
-          })}
+                      {/* Small 30px Circle Arrow Button */}
+                      <div className="w-[30px] h-[30px] rounded-full bg-gray-100 group-hover:bg-[#F97316]/10 border border-transparent group-hover:border-[#F97316]/30 flex items-center justify-center text-gray-400 group-hover:text-[#F97316] shrink-0 transition-all duration-200">
+                        <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                      </div>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              );
+            })}
+          </div>
         </div>
 
       </div>
     </section>
   );
 };
+

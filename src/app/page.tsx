@@ -9,7 +9,6 @@ import { Hero } from "@/components/home/Hero";
 import { CategoryIconRow } from "@/components/home/CategoryIconRow";
 import { BenefitsBar } from "@/components/home/BenefitsBar";
 import { PopularProducts } from "@/components/home/PopularProducts";
-import { BrandsStrip } from "@/components/home/BrandsStrip";
 import { HomeBlogSection } from "@/components/home/HomeBlogSection";
 import { PackagingCtaBanner } from "@/components/home/PackagingCtaBanner";
 import { TrustInfoSection } from "@/components/home/TrustInfoSection";
@@ -64,10 +63,7 @@ export default function Home() {
         {/* 10. From Our Blog Section */}
         <HomeBlogSection />
 
-        {/* 11. Top Brands We Deal In Logo Strip */}
-        <BrandsStrip />
-
-        {/* 12. Client Testimonials */}
+        {/* 11. Client Testimonials */}
         <TestimonialsSection />
 
         {/* 13. Statistics Bar */}

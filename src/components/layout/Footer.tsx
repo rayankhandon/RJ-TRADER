@@ -161,11 +161,6 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/brands" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
-                  Authorized Brands
-                </Link>
-              </li>
-              <li>
                 <Link href="/blog" className="hover:text-[#F97316] hover:translate-x-1 transition-all duration-200 inline-block">
                   Blog &amp; Insights
                 </Link>

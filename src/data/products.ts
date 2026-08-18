@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     name: "Mann-Filter W712 High Efficiency Oil Filter",
     category: "oil-filters",
     categoryName: "Oil Filters",
-    image: "/images/products/industrial-grease-ep2.png",
+    image: "/images/categories/oil-filters.png",
     description: "OEM quality spin-on oil filter offering maximum dirt holding capacity and engine wear protection for European and Asian vehicle engines.",
     specs: {
       "Filter Type": "Spin-On Oil Filter",
@@ -115,7 +115,7 @@ export const PRODUCTS: Product[] = [
     name: "Akebono Heavy-Duty Ceramic Front Brake Pads",
     category: "brake-parts",
     categoryName: "Brake Pads & Discs",
-    image: "/images/products/gear-oil-80w90.png",
+    image: "/images/categories/brake-parts.png",
     description: "Ultra-quiet ceramic brake pads providing superior stopping power, zero dust accumulation, and extended rotor life for commercial & passenger cars.",
     specs: {
       "Material": "Premium Ceramic Compound",
@@ -139,7 +139,7 @@ export const PRODUCTS: Product[] = [
     name: "Brembo Vented Front Brake Discs (Pair)",
     category: "brake-parts",
     categoryName: "Brake Pads & Discs",
-    image: "/images/products/hydraulic-oil-46.png",
+    image: "/images/categories/brake-parts.png",
     description: "High-carbon vented front brake rotors engineered for maximum heat dissipation, smooth braking response, and resistance to warping under heavy loads.",
     specs: {
       "Rotor Type": "Vented High-Carbon Rotor",
@@ -162,7 +162,7 @@ export const PRODUCTS: Product[] = [
     name: "KYB Excel-G Heavy Duty Shock Absorber Set",
     category: "suspension",
     categoryName: "Suspension Parts",
-    image: "/images/products/radiator-coolant-green.png",
+    image: "/images/categories/suspension-parts.png",
     description: "Twin-tube gas shock absorbers designed to restore original vehicle handling, damp road vibrations, and enhance safety for commercial fleets.",
     specs: {
       "Design": "Twin-Tube Nitrogen Gas Pressurized",
@@ -184,7 +184,7 @@ export const PRODUCTS: Product[] = [
     name: "Gates PowerGrip Timing Belt & Tensioner Kit",
     category: "belts-hoses",
     categoryName: "Belts & Hoses",
-    image: "/images/products/atf-dexron-iii.png",
+    image: "/images/categories/clutch-parts.png",
     description: "Complete timing belt replacement kit including high-tensile HSN timing belt, tensioner pulley, and idler bearings for engine overhaul maintenance.",
     specs: {
       "Belt Material": "HSN Rubber with Fiberglass Cord",
