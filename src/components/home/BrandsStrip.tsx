@@ -150,7 +150,7 @@ export const BRANDS: Brand[] = [
 export const BrandsStrip: React.FC = () => {
   return (
     <section id="brands" className="w-full bg-[#F7F9FC] py-14 lg:py-16 border-b border-[#E5E7EB]">
-      <div className="w-full max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <AnimatedSection>

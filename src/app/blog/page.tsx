@@ -94,7 +94,7 @@ export default function BlogListingPage() {
           }}
         />
 
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Column (~65% width) */}
@@ -205,7 +205,7 @@ export default function BlogListingPage() {
       </div>
 
       <main className="flex-1 w-full py-12 lg:py-16 space-y-12 lg:space-y-14">
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
           {/* Featured Article Card */}
           {featuredPost && (

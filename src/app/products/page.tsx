@@ -147,7 +147,7 @@ function ProductsPageContent() {
 
       {/* 2. Main Catalog Area */}
       <main className="flex-1 w-full py-7 lg:py-10">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-7 lg:gap-8">
 
             {/* Left Sidebar Filter */}

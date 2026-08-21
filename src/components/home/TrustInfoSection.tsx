@@ -230,7 +230,7 @@ export const TrustInfoSection: React.FC<TrustInfoSectionProps> = () => {
 
   return (
     <section className="w-full bg-[#F8FAFC] py-10 lg:py-14 border-b border-[#E5E7EB] relative">
-      <div className="w-full max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
 
         {/* MAIN TWO-COLUMN LAYOUT */}
         <AnimatedSection>

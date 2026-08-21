@@ -75,7 +75,7 @@ export const CATEGORIES_LIST: CategoryItem[] = [
 export const CategoryIconRow: React.FC = () => {
   return (
     <section className="w-full bg-[#F8F9FA] py-12 lg:py-16 border-b border-[#E5E7EB]">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Premium Section Header */}
         <AnimatedSection>
@@ -112,7 +112,7 @@ export const CategoryIconRow: React.FC = () => {
         </AnimatedSection>
 
         {/* Centered 8 Category Cards Grid: 4 Cols Desktop, 2 Cols Tablet, 2 Cols Mobile */}
-        <div className="max-w-[1220px] mx-auto">
+        <div className="max-w-[1700px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
             {CATEGORIES_LIST.map((cat, idx) => {
               return (

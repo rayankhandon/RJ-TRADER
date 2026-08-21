@@ -40,7 +40,7 @@ export const BenefitsBar: React.FC = () => {
 
   return (
     <section className="w-full bg-[#F7F8FA] border-b border-[#E5E7EB] py-14 lg:py-16">
-      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <AnimatedSection>
