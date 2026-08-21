@@ -32,7 +32,7 @@ export const FloatingWidgets: React.FC<FloatingWidgetsProps> = ({ onOpenQuoteMod
   return (
     <>
       {/* Fixed Action Stack at Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
+      <div className="fixed bottom-16 sm:bottom-6 right-4 sm:right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
         
         {/* Scroll To Top Button */}
         {showScrollTop && (

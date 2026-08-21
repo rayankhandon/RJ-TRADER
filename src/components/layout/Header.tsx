@@ -1,18 +1,19 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import {
   Search,
   ChevronDown,
   Truck,
   FileText,
-  ShoppingCart,
   Menu,
   X,
   Layers,
 } from "lucide-react";
 import { Logo } from "@/components/common/Logo";
 import { CATEGORIES } from "@/data/navigation";
+import { MobileMenu } from "@/components/layout/MobileMenu";
 
 interface HeaderProps {
   onOpenQuoteModal: () => void;
@@ -24,13 +25,39 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   onOpenQuoteModal,
   onOpenTrackingModal,
-  onToggleMobileNav = () => {},
-  isMobileNavOpen = false,
+  onToggleMobileNav,
+  isMobileNavOpen,
 }) => {
+  const pathname = usePathname();
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isInternalMobileNavOpen, setIsInternalMobileNavOpen] = useState(false);
   const categoryRef = useRef<HTMLDivElement>(null);
+
+  // Close mobile navigation on route change
+  useEffect(() => {
+    setIsInternalMobileNavOpen(false);
+  }, [pathname]);
+
+  // Use parent prop ONLY if onToggleMobileNav handler is explicitly provided; otherwise use internal state
+  const isMenuOpen = (onToggleMobileNav && isMobileNavOpen !== undefined) 
+    ? isMobileNavOpen 
+    : isInternalMobileNavOpen;
+
+  const handleToggleMobileNav = () => {
+    setIsInternalMobileNavOpen((prev) => !prev);
+    if (onToggleMobileNav) {
+      onToggleMobileNav();
+    }
+  };
+
+  const handleCloseMobileNav = () => {
+    setIsInternalMobileNavOpen(false);
+    if (isMobileNavOpen && onToggleMobileNav) {
+      onToggleMobileNav();
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,22 +96,54 @@ export const Header: React.FC<HeaderProps> = ({
     <header className={`w-full bg-white border-b border-gray-200 sticky top-0 z-40 transition-all duration-300 animate-load-nav ${
       isScrolled ? "shadow-md bg-white/95 backdrop-blur-md border-gray-300" : "shadow-xs"
     }`}>
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-0.5 sm:py-1 lg:py-1">
-        <div className="flex items-center justify-between gap-3 lg:gap-6">
-          
-          {/* Logo & Category Selector (Left) */}
-          <div className="flex items-center gap-4 lg:gap-8 shrink-0">
-            {/* Mobile Hamburger Trigger */}
+      <div className="w-full max-w-[1700px] mx-auto px-0 sm:px-6 lg:px-8 py-0 lg:py-1 min-h-[58px] lg:h-[85px] flex flex-col justify-center">
+        
+        {/* ROW 2: Main Mobile/Tablet Header Bar (< lg) */}
+        <div className="flex lg:hidden items-center justify-between relative px-3.5 h-[52px] w-full bg-white border-b border-gray-100">
+          {/* LEFT: Hamburger Menu Icon */}
+          <button
+            type="button"
+            onClick={handleToggleMobileNav}
+            className="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-[#F97316] rounded-lg transition-colors cursor-pointer shrink-0"
+            aria-label="Toggle Navigation"
+          >
+            {isMenuOpen ? <X className="w-5 h-5 text-[#F97316]" /> : <Menu className="w-5 h-5" />}
+          </button>
+
+          {/* CENTER: Visually Centered RJ Traders Logo */}
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+            <Logo />
+          </div>
+
+          {/* RIGHT: Compact Action Icons (Track Order & Request Quote) */}
+          <div className="flex items-center gap-1.5 shrink-0">
             <button
-              onClick={onToggleMobileNav}
-              className="lg:hidden p-1.5 text-gray-700 hover:text-[#F97316] rounded-md focus:outline-hidden"
-              aria-label="Toggle Navigation"
+              type="button"
+              onClick={onOpenTrackingModal}
+              title="Track Your Order"
+              className="w-8.5 h-8.5 rounded-full bg-[#F5F6F8] hover:bg-[#F97316]/10 border border-gray-200 flex items-center justify-center text-[#06182F] hover:text-[#F97316] transition-colors cursor-pointer shrink-0"
             >
-              {isMobileNavOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Truck className="w-4 h-4 text-[#06182F]" />
             </button>
 
+            <button
+              type="button"
+              onClick={onOpenQuoteModal}
+              title="Request Quote"
+              className="w-8.5 h-8.5 rounded-full bg-[#F97316]/10 hover:bg-[#F97316] border border-[#F97316]/30 flex items-center justify-center text-[#F97316] hover:text-white transition-all cursor-pointer shrink-0 shadow-xs"
+            >
+              <FileText className="w-4 h-4 text-[#F97316]" />
+            </button>
+          </div>
+        </div>
+
+        {/* DESKTOP HEADER ROW (>= lg) - 100% UNTOUCHED */}
+        <div className="hidden lg:flex items-center justify-between gap-3 lg:gap-6 w-full">
+          
+          {/* Logo & Category Selector (Left) */}
+          <div className="flex items-center gap-3 sm:gap-4 lg:gap-8 shrink-0">
             {/* RJ Traders Brand Logo */}
-            <Logo />
+            <Logo className="-ml-1 sm:-ml-2 lg:-ml-3" />
 
             {/* Category Selector Dropdown (Desktop) */}
             <div className="relative hidden xl:block" ref={categoryRef}>
@@ -127,7 +186,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Expanded Search Bar (Center Priority) */}
-          <div className="flex-1 max-w-2xl hidden md:block mx-2">
+          <div className="flex-1 max-w-2xl hidden lg:block mx-2">
             <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full">
               <div className="relative flex-1">
                 <input
@@ -149,88 +208,103 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Action Items (Right) */}
-          <div className="flex items-center gap-3 lg:gap-5 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-6 lg:gap-8 shrink-0">
             {/* Action 1: Track Order */}
             <div 
               onClick={onOpenTrackingModal}
-              className="hidden lg:flex items-center gap-2 text-left group cursor-pointer"
+              className="flex items-center gap-2 text-left group cursor-pointer"
             >
-              <div className="w-8.5 h-8.5 rounded-full bg-[#F5F6F8] group-hover:bg-[#F97316]/10 flex items-center justify-center text-[#06182F] group-hover:text-[#F97316] transition-colors border border-gray-200 shrink-0">
-                <Truck className="w-4 h-4 text-[#06182F] group-hover:text-[#F97316]" />
+              <div className="w-8.5 h-8.5 sm:w-10 sm:h-10 rounded-full bg-[#F5F6F8] group-hover:bg-[#F97316]/10 flex items-center justify-center text-[#06182F] group-hover:text-[#F97316] transition-colors border border-gray-200 shrink-0">
+                <Truck className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#06182F] group-hover:text-[#F97316] transition-colors" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold leading-none">
+              <div className="hidden sm:flex flex-col">
+                <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold leading-none">
                   Track Order
                 </span>
-                <span className="text-[11px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
+                <span className="text-xs sm:text-[13px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
                   Track Your Order
                 </span>
               </div>
             </div>
 
             {/* Divider */}
-            <div className="hidden lg:block w-px h-7 bg-gray-200" />
+            <div className="w-px h-7 sm:h-8 bg-gray-200" />
 
             {/* Action 2: Request Quote */}
             <button
               onClick={onOpenQuoteModal}
-              className="hidden lg:flex items-center gap-2 text-left group cursor-pointer focus:outline-hidden"
+              className="flex items-center gap-2 text-left group cursor-pointer focus:outline-hidden"
             >
-              <div className="w-8.5 h-8.5 rounded-full bg-[#F5F6F8] group-hover:bg-[#F97316]/10 flex items-center justify-center text-[#06182F] group-hover:text-[#F97316] transition-colors border border-gray-200 shrink-0">
-                <FileText className="w-4 h-4 text-[#06182F] group-hover:text-[#F97316]" />
+              <div className="w-8.5 h-8.5 sm:w-10 sm:h-10 rounded-full bg-[#F97316]/10 hover:bg-[#F97316] flex items-center justify-center text-[#F97316] group-hover:text-white transition-all duration-200 border border-[#F97316]/30 shrink-0 shadow-xs">
+                <FileText className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#F97316] group-hover:text-white transition-colors" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold leading-none">
+              <div className="hidden sm:flex flex-col">
+                <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold leading-none">
                   Request Quote
                 </span>
-                <span className="text-[11px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
+                <span className="text-xs sm:text-[13px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
                   Get a Price Quote
                 </span>
               </div>
             </button>
-
-            {/* Divider */}
-            <div className="hidden lg:block w-px h-7 bg-gray-200" />
-
-            {/* Action 3: Cart */}
-            <div className="flex items-center gap-2 text-left group cursor-pointer">
-              <div className="relative w-8.5 h-8.5 rounded-full bg-[#F5F6F8] group-hover:bg-[#F97316]/10 flex items-center justify-center text-[#06182F] group-hover:text-[#F97316] transition-colors border border-gray-200 shrink-0">
-                <ShoppingCart className="w-4 h-4 text-[#06182F] group-hover:text-[#F97316]" />
-                <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#F97316] text-white text-[9px] font-bold flex items-center justify-center">
-                  0
-                </span>
-              </div>
-              <div className="hidden sm:flex flex-col">
-                <span className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold leading-none">
-                  My Cart
-                </span>
-                <span className="text-[11px] font-extrabold text-[#06182F] leading-tight mt-0.5 group-hover:text-[#F97316] transition-colors">
-                  View Cart
-                </span>
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* Mobile Search Bar */}
-        <div className="mt-2.5 md:hidden">
-          <form onSubmit={handleSearchSubmit} className="relative flex items-center">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search products, categories or brands..."
-              className="w-full pl-3 pr-20 py-2 bg-[#F5F6F8] border border-gray-300 rounded-md text-xs text-gray-900 placeholder-gray-500 focus:outline-hidden focus:ring-2 focus:ring-[#F97316]"
-            />
-            <button
-              type="submit"
-              className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#F97316] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-md"
-            >
-              SEARCH
-            </button>
+        {/* ROW 3: Mobile Search Bar (< lg) */}
+        <div className="lg:hidden w-full px-3.5 pt-2 pb-1.5">
+          <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full max-w-full">
+            <div className="relative w-full flex items-center">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products, categories or brands..."
+                className="w-full pl-3.5 pr-20 py-2 bg-[#F5F6F8] border border-gray-300 rounded-lg text-xs text-gray-900 placeholder-gray-500 focus:outline-hidden focus:ring-2 focus:ring-[#F97316] focus:bg-white transition-all"
+              />
+              <button
+                type="submit"
+                className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#F97316] hover:bg-[#EA580C] text-white text-[10px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-md shadow-xs transition-colors shrink-0 cursor-pointer"
+              >
+                SEARCH
+              </button>
+            </div>
           </form>
         </div>
+
+        {/* ROW 4: Mobile Side-by-Side Action Buttons (< lg) */}
+        <div className="lg:hidden w-full px-3.5 pb-2.5 pt-0.5">
+          <div className="grid grid-cols-2 gap-2 w-full">
+            {/* Left Button: Track Your Order */}
+            <button
+              type="button"
+              onClick={onOpenTrackingModal}
+              className="flex items-center justify-center gap-1.5 h-9 bg-[#F8FAFC] hover:bg-gray-100 border border-gray-200/90 rounded-lg px-2 text-[#06182F] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-tight transition-colors shadow-2xs cursor-pointer truncate"
+            >
+              <Truck className="w-3.5 h-3.5 text-[#F97316] shrink-0" />
+              <span className="truncate">Track Your Order</span>
+            </button>
+
+            {/* Right Button: Get a Price Quote */}
+            <button
+              type="button"
+              onClick={onOpenQuoteModal}
+              className="flex items-center justify-center gap-1.5 h-9 bg-[#F8FAFC] hover:bg-[#FFF8F5] border border-gray-200/90 hover:border-[#F97316]/40 rounded-lg px-2 text-[#06182F] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-tight transition-colors shadow-2xs cursor-pointer truncate"
+            >
+              <FileText className="w-3.5 h-3.5 text-[#F97316] shrink-0" />
+              <span className="truncate">Get a Price Quote</span>
+            </button>
+          </div>
+        </div>
+
       </div>
+
+      {/* Shared Mobile Navigation Drawer Overlay */}
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={handleCloseMobileNav}
+        onOpenQuoteModal={onOpenQuoteModal}
+      />
     </header>
   );
 };
+

@@ -30,7 +30,8 @@ import {
   Package,
   Truck,
   Sparkles,
-  FileText
+  FileText,
+  ChevronDown
 } from "lucide-react";
 
 function ProductsPageContent() {
@@ -41,7 +42,14 @@ function ProductsPageContent() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("popular");
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [selectedQuoteProduct, setSelectedQuoteProduct] = useState<any>(null);
   const [isTrackModalOpen, setIsTrackModalOpen] = useState(false);
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+  const handleOpenQuoteModal = (product?: any) => {
+    setSelectedQuoteProduct(product || null);
+    setIsQuoteModalOpen(true);
+  };
 
   useEffect(() => {
     const cat = searchParams.get("category");
@@ -80,7 +88,11 @@ function ProductsPageContent() {
 
   const filteredProducts = useMemo(() => {
     let result = PRODUCTS.filter((p) => {
-      const matchesCategory = selectedCategory === "all" || p.category === selectedCategory;
+      const matchesCategory =
+        selectedCategory === "all" ||
+        p.category === selectedCategory ||
+        (selectedCategory === "oil-filter" && p.category === "oil-filters") ||
+        (selectedCategory === "oil-filters" && p.category === "oil-filter");
       const matchesSearch =
         p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -135,11 +147,11 @@ function ProductsPageContent() {
 
       {/* 2. Main Catalog Area */}
       <main className="flex-1 w-full py-7 lg:py-10">
-        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-8">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-7 lg:gap-8">
 
-            {/* Left Sidebar Filter (Wider Column w-88 xl:w-96 = ~352-384px) */}
-            <aside className="w-full lg:w-88 xl:w-96 shrink-0">
+            {/* Left Sidebar Filter */}
+            <aside className="w-full lg:w-76 xl:w-80 shrink-0">
               <style>{`
                 @keyframes slideRight {
                   0% { opacity: 0; transform: translateX(-16px); }
@@ -155,25 +167,35 @@ function ProductsPageContent() {
 
                 {/* Filter Header */}
                 <div className="flex items-center justify-between pb-3.5 border-b border-gray-100 mb-3.5 animate-[slideDownHeader_0.4s_ease-out_forwards]">
-                  <div className="flex items-center gap-2 font-black uppercase text-xs sm:text-sm text-[#0A1A2F]">
-                    <Filter className="w-4 h-4 text-[#F97316]" />
-                    <span>CATEGORIES</span>
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
+                    className="flex items-center justify-between w-full lg:w-auto font-black uppercase text-xs sm:text-sm text-[#0A1A2F] cursor-pointer lg:cursor-default"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Filter className="w-4 h-4 text-[#F97316]" />
+                      <span>CATEGORIES</span>
+                    </div>
+                    <ChevronDown className={`w-4 h-4 text-[#F97316] lg:hidden transition-transform duration-200 ${isMobileFilterOpen ? "rotate-180" : ""}`} />
+                  </button>
                   {selectedCategory !== "all" && (
                     <button
                       onClick={() => setSelectedCategory("all")}
-                      className="text-[11px] font-extrabold text-[#F97316] hover:underline uppercase cursor-pointer"
+                      className="hidden lg:block text-[11px] font-extrabold text-[#F97316] hover:underline uppercase cursor-pointer shrink-0 ml-2"
                     >
                       RESET FILTER
                     </button>
                   )}
                 </div>
 
-                {/* Interactive Category Filter List */}
-                <div className="space-y-1.5">
+                {/* Interactive Category Filter List (Collapsible on Mobile, Always Visible on Desktop) */}
+                <div className={`${isMobileFilterOpen ? "block" : "hidden"} lg:block space-y-1.5`}>
                   {/* All Products Row */}
                   <button
-                    onClick={() => setSelectedCategory("all")}
+                    onClick={() => {
+                      setSelectedCategory("all");
+                      setIsMobileFilterOpen(false);
+                    }}
                     className={`w-full text-left px-3.5 py-3.5 rounded-lg text-xs font-bold uppercase transition-all duration-200 flex items-center justify-between cursor-pointer gap-3 group border-l-4 ${
                       selectedCategory === "all"
                         ? "bg-[#06182F] text-white shadow-sm border-l-[#F97316]"
@@ -200,7 +222,10 @@ function ProductsPageContent() {
                       <button
                         key={cat.id}
                         style={{ animationDelay: `${idx * 40}ms` }}
-                        onClick={() => setSelectedCategory(cat.id)}
+                        onClick={() => {
+                          setSelectedCategory(cat.id);
+                          setIsMobileFilterOpen(false);
+                        }}
                         className={`w-full text-left px-3.5 py-3.5 rounded-lg text-xs font-bold uppercase transition-all duration-200 flex items-center justify-between cursor-pointer gap-3 group border-l-4 animate-feature-box ${
                           isSelected
                             ? "bg-[#06182F] text-white shadow-sm border-l-[#F97316]"
@@ -309,22 +334,14 @@ function ProductsPageContent() {
                       className="bg-white border border-gray-200/90 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 h-full"
                     >
                       <div>
-                        {/* Studio Compact Product Image Container (215–225px) */}
-                        <div
-                          className="relative w-full h-[195px] sm:h-[210px] lg:h-[225px] overflow-hidden p-3 flex items-center justify-center border-b border-white/10"
-                          style={{
-                            background: "linear-gradient(135deg, #06182F 0%, #0D284B 60%, #06182F 100%)"
-                          }}
-                        >
-                          {/* Subtle Ambient Orange Glow */}
-                          <div className="absolute inset-0 bg-[#F97316]/10 rounded-full blur-2xl pointer-events-none scale-75" />
-
+                        {/* Clean Product Image Container (Pure White Background) */}
+                        <div className="relative w-full h-[175px] sm:h-[190px] lg:h-[200px] overflow-hidden p-3 flex items-center justify-center bg-white border-b border-gray-100">
                           <Image
                             src={product.image}
                             alt={product.name}
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-contain p-2.5 group-hover:scale-105 transition-transform duration-500 relative z-10"
+                            className="object-contain p-3 group-hover:scale-105 transition-transform duration-300 relative z-10"
                           />
 
                           {/* Top-Left Status Badge */}
@@ -335,7 +352,7 @@ function ProductsPageContent() {
                           )}
 
                           {/* Bottom-Right MOQ Badge with Box Icon */}
-                          <span className="absolute bottom-2.5 right-2.5 bg-[#06182F]/90 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-[5px] backdrop-blur-xs shadow-xs z-20 border border-white/20 flex items-center gap-1">
+                          <span className="absolute bottom-2.5 right-2.5 bg-[#06182F]/90 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-[5px] backdrop-blur-xs shadow-xs z-20 border border-gray-200/20 flex items-center gap-1">
                             <Package className="w-3 h-3 text-[#F97316]" />
                             <span>MOQ: {product.moq}</span>
                           </span>
@@ -378,7 +395,7 @@ function ProductsPageContent() {
                           <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform duration-200" />
                         </Link>
                         <button
-                          onClick={() => setIsQuoteModalOpen(true)}
+                          onClick={() => handleOpenQuoteModal({ id: product.id, name: product.name, category: product.categoryName })}
                           className="h-8.5 bg-[#F97316] hover:bg-[#ea580c] hover:scale-102 active:scale-95 text-white text-[10.5px] font-extrabold uppercase tracking-wider px-3 rounded-lg transition-all shadow-xs shrink-0 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1"
                         >
                           <FileText className="w-3 h-3" />
@@ -397,8 +414,15 @@ function ProductsPageContent() {
       </main>
 
       <Footer />
-      <FloatingWidgets onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
-      <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
+      <FloatingWidgets onOpenQuoteModal={() => handleOpenQuoteModal()} />
+      <QuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => {
+          setIsQuoteModalOpen(false);
+          setSelectedQuoteProduct(null);
+        }}
+        initialProduct={selectedQuoteProduct}
+      />
       <OrderTrackingModal isOpen={isTrackModalOpen} onClose={() => setIsTrackModalOpen(false)} />
     </div>
   );

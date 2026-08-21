@@ -54,13 +54,13 @@ export const BenefitsBar: React.FC = () => {
           </div>
         </AnimatedSection>
 
-        {/* 6 Equal-Width Cards Grid (1 col Mobile, 3 cols Tablet, 6 cols Desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4.5 lg:gap-5 items-stretch">
+        {/* 6 Equal-Width Cards Grid (2 cols Mobile, 3 cols Tablet, 6 cols Desktop) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4.5 lg:gap-5 items-stretch">
           {benefits.map((item, idx) => {
             const Icon = item.icon;
             return (
               <AnimatedSection key={idx} delayMs={idx * 70} className="h-full">
-                <div className="bg-white rounded-[16px] border border-[#E5E7EB] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] hover:border-[#F97316]/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between h-full cursor-default">
+                <div className="bg-white rounded-[16px] border border-[#E5E7EB] p-4 sm:p-6 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] hover:border-[#F97316]/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between h-full cursor-default">
                   
                   <div>
                     {/* Soft Light-Orange Circular Icon Container */}

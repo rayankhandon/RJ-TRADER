@@ -22,7 +22,12 @@ import { FloatingWidgets } from "@/components/common/FloatingWidgets";
 export default function Home() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isTrackModalOpen, setIsTrackModalOpen] = useState(false);
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+
+  const handleOpenQuoteModal = (product?: any) => {
+    setSelectedProduct(product || null);
+    setIsQuoteModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F6F8]" suppressHydrationWarning>
@@ -31,19 +36,17 @@ export default function Home() {
 
       {/* 2. Main Header (Logo, Category Dropdown, Search Bar, Header Actions) */}
       <Header
-        onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
+        onOpenQuoteModal={() => handleOpenQuoteModal()}
         onOpenTrackingModal={() => setIsTrackModalOpen(true)}
-        onToggleMobileNav={() => setIsMobileNavOpen(!isMobileNavOpen)}
-        isMobileNavOpen={isMobileNavOpen}
       />
 
       {/* 3. Dark Navy Primary Navigation Bar */}
-      <Navbar onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+      <Navbar onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
       {/* Main Page Content */}
       <main className="flex-1 w-full">
         {/* 4. Full-Width Background Hero Section */}
-        <Hero onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        <Hero onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
         {/* 5. 6-Card Feature Row (Engine Oil & Spare Parts Focus) */}
         <BenefitsBar />
@@ -52,13 +55,13 @@ export default function Home() {
         <CategoryIconRow />
 
         {/* 7. Products Section with Client-Side Tabbed Filtering */}
-        <PopularProducts onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        <PopularProducts onOpenQuoteModal={(prod) => handleOpenQuoteModal(prod)} />
 
         {/* 8. Packaging & Delivery CTA Banner */}
-        <PackagingCtaBanner onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        <PackagingCtaBanner onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
         {/* 9. Wholesale Clientele, Stats & CTA (Who We Supply) */}
-        <TrustInfoSection onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        <TrustInfoSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
         {/* 10. From Our Blog Section */}
         <HomeBlogSection />
@@ -74,19 +77,16 @@ export default function Home() {
       <Footer />
 
       {/* Floating Action Buttons (WhatsApp + Sticky Mobile Bar + Scroll Top) */}
-      <FloatingWidgets onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
-
-      {/* Mobile Drawer Menu */}
-      <MobileMenu
-        isOpen={isMobileNavOpen}
-        onClose={() => setIsMobileNavOpen(false)}
-        onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
-      />
+      <FloatingWidgets onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
       {/* Interactive Quote Request Modal */}
       <QuoteModal
         isOpen={isQuoteModalOpen}
-        onClose={() => setIsQuoteModalOpen(false)}
+        onClose={() => {
+          setIsQuoteModalOpen(false);
+          setSelectedProduct(null);
+        }}
+        initialProduct={selectedProduct}
       />
 
       {/* Order Tracking Modal */}

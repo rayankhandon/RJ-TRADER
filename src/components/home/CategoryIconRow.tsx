@@ -111,46 +111,57 @@ export const CategoryIconRow: React.FC = () => {
           </div>
         </AnimatedSection>
 
-        {/* Centered 8 Category Cards Grid: 4 Cols Desktop, 2 Cols Tablet, 1 Col Mobile */}
+        {/* Centered 8 Category Cards Grid: 4 Cols Desktop, 2 Cols Tablet, 2 Cols Mobile */}
         <div className="max-w-[1220px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
             {CATEGORIES_LIST.map((cat, idx) => {
               return (
                 <AnimatedSection key={cat.id} delayMs={idx * 50} className="h-full">
                   <Link
                     href={cat.href}
-                    className="w-full bg-white rounded-[12px] border border-gray-200/80 p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] hover:border-[#F97316]/80 hover:-translate-y-[3px] transition-all duration-300 ease-out group flex flex-col justify-between h-[162px] cursor-pointer overflow-hidden"
+                    className="w-full aspect-auto sm:aspect-square h-[170px] sm:h-auto bg-white rounded-[18px] border border-gray-200/80 p-2.5 sm:p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] hover:border-[#F97316]/80 hover:-translate-y-[4px] transition-all duration-300 ease-out group flex flex-col justify-between cursor-pointer overflow-hidden"
                   >
-                    {/* Compact ~98px Light-Gray Image Container */}
-                    <div className="w-full h-[98px] rounded-[8px] bg-[#F4F6F8] group-hover:bg-[#EBF0F7] border border-gray-100 flex items-center justify-center p-2.5 overflow-hidden relative transition-colors duration-300 shrink-0">
+                    {/* Single Dedicated Product Image Area */}
+                    <div className="flex-1 w-full rounded-[12px] bg-[#F3F5F7] group-hover:bg-[#EAEFF5] flex items-center justify-center p-2 sm:p-3.5 overflow-hidden relative transition-colors duration-300">
                       <img
                         src={`${cat.image}?v=3`}
                         alt={cat.title}
                         decoding="async"
-                        className="w-full h-full object-contain object-center drop-shadow-xs group-hover:scale-[1.05] transition-transform duration-300 ease-out"
+                        className="w-full h-full object-contain object-center group-hover:scale-[1.06] transition-transform duration-300 ease-out"
                       />
                     </div>
 
-                    {/* Compact Card Content: Name & Count on Left, Small Arrow on Right */}
-                    <div className="flex items-center justify-between w-full pt-1.5 pb-0.5">
-                      <div className="flex flex-col min-w-0 pr-2">
-                        <h3 className="text-xs sm:text-[13px] font-extrabold text-[#06182F] uppercase tracking-tight group-hover:text-[#F97316] transition-colors duration-200 truncate font-sans">
+                    {/* Card Content: Title, Item Count & Arrow Button */}
+                    <div className="flex items-center justify-between w-full pt-2.5 pb-0.5 shrink-0 px-0.5">
+                      <div className="flex flex-col min-w-0 pr-1.5">
+                        <h3 className="text-[11px] sm:text-sm font-extrabold text-[#06182F] uppercase tracking-tight group-hover:text-[#F97316] transition-colors duration-200 truncate font-sans">
                           {cat.title}
                         </h3>
-                        <span className="text-[10.5px] text-gray-500 font-medium block mt-0.5">
+                        <span className="text-[10px] sm:text-[11px] text-gray-500 font-medium block mt-0.5">
                           {cat.count}
                         </span>
                       </div>
 
-                      {/* Small 30px Circle Arrow Button */}
-                      <div className="w-[30px] h-[30px] rounded-full bg-gray-100 group-hover:bg-[#F97316]/10 border border-transparent group-hover:border-[#F97316]/30 flex items-center justify-center text-gray-400 group-hover:text-[#F97316] shrink-0 transition-all duration-200">
-                        <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                      {/* Circle Arrow Button */}
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 group-hover:bg-[#F97316]/10 border border-transparent group-hover:border-[#F97316]/30 flex items-center justify-center text-gray-400 group-hover:text-[#F97316] shrink-0 transition-all duration-200">
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-0.5 transition-transform duration-200" />
                       </div>
                     </div>
                   </Link>
                 </AnimatedSection>
               );
             })}
+          </div>
+
+          {/* Mobile Bottom View All Categories Button */}
+          <div className="mt-8 flex justify-center sm:hidden">
+            <Link
+              href="/products"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#06182F] hover:bg-[#F97316] text-white text-xs font-extrabold uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer group"
+            >
+              <span>VIEW ALL CATEGORIES</span>
+              <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
 

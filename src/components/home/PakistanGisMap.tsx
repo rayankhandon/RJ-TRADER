@@ -19,7 +19,7 @@ export const PakistanGisMap: React.FC<PakistanGisMapProps> = ({ isVisible = true
   ];
 
   return (
-    <div className="relative w-full h-full min-h-[340px] flex items-center justify-center overflow-hidden rounded-[16px] bg-[#060e1c] border border-white/12 p-3 shadow-2xl">
+    <div className="relative w-full h-full min-h-[300px] sm:min-h-[320px] flex items-center justify-center overflow-hidden rounded-[16px] bg-[#060e1c] border border-white/12 p-3 shadow-2xl">
       <style jsx>{`
         @keyframes radarPulse {
           0% {

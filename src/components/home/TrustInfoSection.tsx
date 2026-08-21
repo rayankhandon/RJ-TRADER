@@ -104,34 +104,42 @@ export const TrustInfoSection: React.FC<TrustInfoSectionProps> = () => {
   const customerCategories = [
     {
       title: "AUTO REPAIR WORKSHOPS",
+      desc: "Reliable engine oils and spare parts for everyday workshop needs.",
       icon: Wrench,
     },
     {
       title: "FLEET & TRANSPORT HUBS",
+      desc: "Bulk automotive supplies to keep commercial fleets running smoothly.",
       icon: Truck,
     },
     {
       title: "COMMERCIAL VEHICLE OUTLETS",
+      desc: "Quality lubricants and parts for trucks, vans, and commercial vehicles.",
       icon: Car,
     },
     {
       title: "SPARE PART RETAILERS",
+      desc: "Fast-moving engine oils and spare parts for retail businesses.",
       icon: Boxes,
     },
     {
       title: "CAR DEALERSHIPS",
+      desc: "Trusted automotive products for dealership service and maintenance.",
       icon: Building2,
     },
     {
       title: "LOGISTICS COMPANIES",
+      desc: "Dependable lubricants and parts for high-mileage logistics fleets.",
       icon: Package,
     },
     {
       title: "CONSTRUCTION & HEAVY EQUIPMENT",
+      desc: "Heavy-duty oils and parts built for demanding equipment operations.",
       icon: HardHat,
     },
     {
       title: "AGRICULTURAL & TRACTOR BUSINESSES",
+      desc: "Engine oils and parts for tractors and agricultural machinery.",
       icon: Tractor,
     },
   ];
@@ -226,73 +234,78 @@ export const TrustInfoSection: React.FC<TrustInfoSectionProps> = () => {
 
         {/* MAIN TWO-COLUMN LAYOUT */}
         <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
+          <div className="space-y-4 sm:space-y-5">
 
-            {/* LEFT COLUMN: Heading + Subtitle + 8 Cards */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
-              
-              {/* Heading & Description */}
-              <div className="text-left space-y-1">
-                <span className="text-[11px] font-extrabold tracking-widest text-[#FF6B00] uppercase block">
-                  WHOLESALE CLIENTELE
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#071A33] uppercase tracking-tight font-sans">
-                  INDUSTRIES WE SUPPLY
-                </h2>
-                <p className="text-xs sm:text-sm text-[#5B6472] font-normal leading-relaxed">
-                  RJ Traders is the trusted supply partner for workshops, fleet operators, transport companies, and retailers across Pakistan.
-                </p>
-              </div>
+            {/* Heading & Description */}
+            <div className="text-left space-y-1">
+              <span className="text-[11px] font-extrabold tracking-widest text-[#FF6B00] uppercase block">
+                WHOLESALE CLIENTELE
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#071A33] uppercase tracking-tight font-sans">
+                INDUSTRIES WE SUPPLY
+              </h2>
+              <p className="text-xs sm:text-sm text-[#5B6472] font-normal leading-relaxed max-w-3xl">
+                RJ Traders is the trusted supply partner for workshops, fleet operators, transport companies, and retailers across Pakistan.
+              </p>
+            </div>
 
-              {/* 8 Customer Cards Grid (2 Cols x 4 Rows) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
+            {/* 2-Column Grid: 8 Industry Cards on Left vs Nationwide Delivery Card on Right */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+
+              {/* LEFT COLUMN: 8 Customer Cards Grid (2 Cols on Mobile, 2 Cols on Tablet/Desktop) */}
+              <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 sm:grid-rows-4 gap-2.5 sm:gap-3.5 w-full h-full">
                 {customerCategories.map((cat, idx) => {
                   const Icon = cat.icon;
                   return (
-                    <AnimatedSection key={idx} delayMs={idx * 75} className="w-full">
+                    <AnimatedSection key={idx} delayMs={idx * 75} className="w-full h-full min-h-0">
                       <div
-                        className="group bg-white rounded-[16px] border border-[#E5E7EB] px-4 py-3 sm:px-4.5 sm:py-3.5 h-[85px] sm:h-[88px] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#FF6B00] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] hover:-translate-y-[3px] transition-all duration-300 ease-out flex items-center gap-3.5 cursor-default"
+                        className="group bg-white rounded-[16px] border border-[#E5E7EB] p-2.5 sm:px-4 sm:py-3 h-full min-h-0 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#FF6B00] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] hover:-translate-y-[3px] transition-all duration-300 ease-out flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3.5 cursor-default"
                       >
-                        <div className="w-10 h-10 rounded-xl bg-[#FFF1E7] text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 shadow-2xs">
-                          <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#FFF1E7] text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 shadow-2xs">
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
                         </div>
-                        <h3 className="text-xs sm:text-[13px] font-extrabold text-[#071A33] group-hover:text-[#FF6B00] transition-colors duration-300 uppercase tracking-tight leading-snug">
-                          {cat.title}
-                        </h3>
+                        <div className="flex flex-col justify-center min-w-0 flex-1 space-y-0.5">
+                          <h3 className="text-[11px] sm:text-[14.5px] font-black text-[#071A33] group-hover:text-[#FF6B00] transition-colors duration-300 uppercase tracking-tight leading-tight">
+                            {cat.title}
+                          </h3>
+                          <p className="text-[10px] sm:text-[12.5px] text-[#5B6472] font-normal leading-snug break-words">
+                            {cat.desc}
+                          </p>
+                        </div>
                       </div>
                     </AnimatedSection>
                   );
                 })}
               </div>
 
-            </div>
+              {/* RIGHT COLUMN: Nationwide Delivery Map Panel */}
+              <div className="lg:col-span-5 bg-[#071A33] text-white rounded-[20px] border border-white/10 p-4 sm:p-6 flex flex-col justify-between h-full min-h-[360px] sm:min-h-[500px] shadow-xl relative overflow-hidden">
 
-            {/* RIGHT COLUMN: Nationwide Delivery Map Panel */}
-            <div className="lg:col-span-5 bg-[#071A33] text-white rounded-[20px] border border-white/10 p-5 sm:p-6 flex flex-col justify-between h-full min-h-[480px] shadow-xl relative overflow-hidden">
+                {/* Header: Title + Subtitle */}
+                <div className="relative z-10 space-y-0.5 mb-2 shrink-0">
+                  <h3 className="text-2xl sm:text-[26px] font-black uppercase text-white tracking-tight font-sans">
+                    NATIONWIDE DELIVERY
+                  </h3>
+                  <p className="text-xs text-[#94A3B8] font-normal leading-relaxed">
+                    Fast &amp; reliable engine oil &amp; spare parts delivery across Pakistan.
+                  </p>
+                </div>
 
-              {/* Header: Title + Subtitle */}
-              <div className="relative z-10 space-y-0.5 mb-2">
-                <h3 className="text-2xl sm:text-[26px] font-black uppercase text-white tracking-tight font-sans">
-                  NATIONWIDE DELIVERY
-                </h3>
-                <p className="text-xs text-[#94A3B8] font-normal leading-relaxed">
-                  Fast &amp; reliable engine oil &amp; spare parts delivery across Pakistan.
-                </p>
-              </div>
+                {/* Real GIS Pakistan Vector Map Canvas Container */}
+                <div ref={mapContainerRef} className="my-2 w-full flex-1 min-h-0 flex items-center justify-center">
+                  <PakistanGisMap isVisible={mapVisible} />
+                </div>
 
-              {/* Real GIS Pakistan Vector Map Canvas Container */}
-              <div ref={mapContainerRef} className="my-2 w-full flex-1 flex items-center justify-center">
-                <PakistanGisMap isVisible={mapVisible} />
-              </div>
+                {/* Bottom Coverage Footer */}
+                <div className="relative z-10 pt-3 border-t border-white/12 space-y-0.5 mt-1 shrink-0">
+                  <span className="text-[10px] font-extrabold text-[#FF6B00] uppercase tracking-wider block">
+                    NATIONWIDE COVERAGE
+                  </span>
+                  <p className="text-xs text-[#CBD5E1] font-normal leading-snug">
+                    Serving workshops, retailers, fleets &amp; businesses across Pakistan.
+                  </p>
+                </div>
 
-              {/* Bottom Coverage Footer */}
-              <div className="relative z-10 pt-3 border-t border-white/12 space-y-0.5 mt-1">
-                <span className="text-[10px] font-extrabold text-[#FF6B00] uppercase tracking-wider block">
-                  NATIONWIDE COVERAGE
-                </span>
-                <p className="text-xs text-[#CBD5E1] font-normal leading-snug">
-                  Serving workshops, retailers, fleets &amp; businesses across Pakistan.
-                </p>
               </div>
 
             </div>

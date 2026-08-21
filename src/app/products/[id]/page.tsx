@@ -22,15 +22,21 @@ export default function ProductDetailPage() {
   const product = PRODUCTS.find((p) => p.id === productId) || PRODUCTS[0];
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isTrackModalOpen, setIsTrackModalOpen] = useState(false);
+  const [selectedQuoteProduct, setSelectedQuoteProduct] = useState<any>(null);
+
+  const handleOpenQuoteModal = (prod?: any) => {
+    setSelectedQuoteProduct(prod || product || null);
+    setIsQuoteModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F6F8]">
       <TopBar />
       <Header
-        onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
+        onOpenQuoteModal={() => handleOpenQuoteModal()}
         onOpenTrackingModal={() => setIsTrackModalOpen(true)}
       />
-      <Navbar onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+      <Navbar onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
       {/* Breadcrumb Header */}
       <div className="bg-[#07172B] text-white py-8 border-b border-white/10">
@@ -55,12 +61,12 @@ export default function ProductDetailPage() {
             
             {/* Left Image Gallery */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm relative overflow-hidden h-[380px]">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm relative overflow-hidden h-[260px] sm:h-[340px] lg:h-[380px]">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-contain p-4 rounded-lg"
                 />
                 {product.badge && (
                   <span className="absolute top-4 left-4 bg-[#F97316] text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded shadow-md">
@@ -103,7 +109,7 @@ export default function ProductDetailPage() {
                 </p>
 
                 {/* MOQ Highlight Banner */}
-                <div className="my-6 p-4 bg-[#07172B] text-white rounded-lg flex items-center justify-between border border-white/10">
+                <div className="my-6 p-4 bg-[#07172B] text-white rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border border-white/10">
                   <div>
                     <span className="text-[10px] uppercase font-bold text-gray-400">MINIMUM ORDER QUANTITY (MOQ)</span>
                     <p className="text-sm font-black text-[#F97316] mt-0.5">{product.moq}</p>
@@ -157,7 +163,7 @@ export default function ProductDetailPage() {
                 {/* CTA Button */}
                 <div className="pt-4 border-t border-gray-200 flex flex-wrap gap-4">
                   <button
-                    onClick={() => setIsQuoteModalOpen(true)}
+                    onClick={() => handleOpenQuoteModal(product)}
                     className="flex-1 h-12 bg-[#F97316] hover:bg-[#ea580c] text-white text-xs sm:text-sm font-black uppercase tracking-wider rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
                   >
                     <FileText className="w-4 h-4" />
@@ -173,8 +179,15 @@ export default function ProductDetailPage() {
       </main>
 
       <Footer />
-      <FloatingWidgets onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
-      <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
+      <FloatingWidgets onOpenQuoteModal={() => handleOpenQuoteModal()} />
+      <QuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => {
+          setIsQuoteModalOpen(false);
+          setSelectedQuoteProduct(null);
+        }}
+        initialProduct={selectedQuoteProduct}
+      />
       <OrderTrackingModal isOpen={isTrackModalOpen} onClose={() => setIsTrackModalOpen(false)} />
     </div>
   );
