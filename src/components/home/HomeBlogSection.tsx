@@ -32,7 +32,7 @@ export const HomeBlogSection: React.FC = () => {
 
   return (
     <section className="w-full bg-[#F7F8FA] py-[64px] border-b border-[#E5E7EB]">
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* 1. Centered Section Header Block */}
         <AnimatedSection>

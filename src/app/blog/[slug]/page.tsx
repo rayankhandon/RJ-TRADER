@@ -49,7 +49,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
 
       {/* Header Banner */}
       <div className="bg-[#06182F] text-white py-12 lg:py-16 border-b border-white/10 relative overflow-hidden">
-        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-2 text-xs text-gray-300 mb-4 uppercase tracking-wider font-semibold">
             <Link href="/" className="hover:text-[#F97316] transition-colors">HOME</Link>
             <ChevronRight className="w-3.5 h-3.5 text-gray-500" />
@@ -103,7 +103,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
       </div>
 
       <main className="flex-1 w-full py-12 lg:py-16">
-        <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             

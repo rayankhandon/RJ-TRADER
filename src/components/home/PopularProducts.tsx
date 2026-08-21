@@ -161,7 +161,7 @@ export const PopularProducts: React.FC<PopularProductsProps> = ({ onOpenQuoteMod
         </AnimatedSection>
 
         {/* Centered Product Grid Container with Comfortable Whitespace & Compact Cards */}
-        <div className="max-w-[1700px] mx-auto">
+        <div className="max-w-[1380px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
             {filteredProducts.map((prod, idx) => (
               <AnimatedSection key={prod.id} delayMs={idx * 80} className="h-full">
