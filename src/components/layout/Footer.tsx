@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300">
                 <MapPin className="w-4 h-4 text-[#F97316] shrink-0" />
-                <span>Location: <strong className="text-white font-semibold">Sadiqabad, Punjab, Pakistan</strong></span>
+                <span>Location: <strong className="text-white font-semibold">Gondal super market phase three,N5 bypass road Sadiq abad, district rahimyarkhan</strong></span>
               </div>
             </div>
           </div>
@@ -196,25 +196,25 @@ export const Footer: React.FC = () => {
                   <div className="w-7.5 h-7.5 rounded-full bg-[#F97316]/15 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
-                  <span>Sadiqabad, Punjab, Pakistan</span>
+                  <span>Gondal super market phase three,N5 bypass road Sadiq abad, district rahimyarkhan</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-7.5 h-7.5 rounded-full bg-[#F97316]/15 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <span>+92 321 1234567</span>
+                  <span>+92 309 0000098</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-7.5 h-7.5 rounded-full bg-[#F97316]/15 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <span>info@rjtraders.pk</span>
+                  <span>rjtrader098@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-400">
                   <div className="w-7.5 h-7.5 rounded-full bg-[#F97316]/15 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shrink-0">
                     <Clock className="w-4 h-4" />
                   </div>
-                  <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+                  <span>Mon–Thu &amp; Sat–Sun: 9:00 AM – 6:00 PM</span>
                 </li>
               </ul>
 
@@ -254,7 +254,7 @@ export const Footer: React.FC = () => {
                 </a>
 
                 <a
-                  href="https://wa.me/923211234567"
+                  href="https://wa.me/923090000098"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="WhatsApp"

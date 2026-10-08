@@ -252,23 +252,23 @@ export const TrustInfoSection: React.FC<TrustInfoSectionProps> = () => {
             {/* 2-Column Grid: 8 Industry Cards on Left vs Nationwide Delivery Card on Right */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
 
-              {/* LEFT COLUMN: 8 Customer Cards Grid (2 Cols on Mobile, 2 Cols on Tablet/Desktop) */}
-              <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 sm:grid-rows-4 gap-2.5 sm:gap-3.5 w-full h-full">
+              {/* LEFT COLUMN: 8 Customer Cards Grid (2 Cols x 4 Rows, 100% Height) */}
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-4 gap-3.5 w-full h-full">
                 {customerCategories.map((cat, idx) => {
                   const Icon = cat.icon;
                   return (
                     <AnimatedSection key={idx} delayMs={idx * 75} className="w-full h-full min-h-0">
                       <div
-                        className="group bg-white rounded-[16px] border border-[#E5E7EB] p-2.5 sm:px-4 sm:py-3 h-full min-h-0 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#FF6B00] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] hover:-translate-y-[3px] transition-all duration-300 ease-out flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3.5 cursor-default"
+                        className="group bg-white rounded-[16px] border border-[#E5E7EB] px-3.5 py-2.5 sm:px-4 sm:py-3 h-full min-h-0 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#FF6B00] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] hover:-translate-y-[3px] transition-all duration-300 ease-out flex items-center gap-3 sm:gap-3.5 cursor-default"
                       >
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#FFF1E7] text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 shadow-2xs">
-                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#FFF1E7] text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 shadow-2xs">
+                          <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
                         </div>
                         <div className="flex flex-col justify-center min-w-0 flex-1 space-y-0.5">
-                          <h3 className="text-[11px] sm:text-[14.5px] font-black text-[#071A33] group-hover:text-[#FF6B00] transition-colors duration-300 uppercase tracking-tight leading-tight">
+                          <h3 className="text-[13px] sm:text-[14.5px] font-black text-[#071A33] group-hover:text-[#FF6B00] transition-colors duration-300 uppercase tracking-tight leading-tight">
                             {cat.title}
                           </h3>
-                          <p className="text-[10px] sm:text-[12.5px] text-[#5B6472] font-normal leading-snug break-words">
+                          <p className="text-[11.5px] sm:text-[12.5px] text-[#5B6472] font-normal leading-snug break-words">
                             {cat.desc}
                           </p>
                         </div>
@@ -279,7 +279,7 @@ export const TrustInfoSection: React.FC<TrustInfoSectionProps> = () => {
               </div>
 
               {/* RIGHT COLUMN: Nationwide Delivery Map Panel */}
-              <div className="lg:col-span-5 bg-[#071A33] text-white rounded-[20px] border border-white/10 p-4 sm:p-6 flex flex-col justify-between h-full min-h-[360px] sm:min-h-[500px] shadow-xl relative overflow-hidden">
+              <div className="lg:col-span-5 bg-[#071A33] text-white rounded-[20px] border border-white/10 p-5 sm:p-6 flex flex-col justify-between h-full min-h-[480px] sm:min-h-[500px] shadow-xl relative overflow-hidden">
 
                 {/* Header: Title + Subtitle */}
                 <div className="relative z-10 space-y-0.5 mb-2 shrink-0">

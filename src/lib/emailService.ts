@@ -18,6 +18,8 @@ export interface EmailServiceResult {
   isDemo?: boolean;
 }
 
+export const BUSINESS_RECEIVING_EMAIL = "rjtrader098@gmail.com";
+
 /**
  * Sends wholesale order/quote requests to business email via zero-backend third-party email service (Web3Forms/Formspree/EmailJS).
  */
@@ -62,6 +64,7 @@ Page URL: ${currentUrl}
         },
         body: JSON.stringify({
           access_key: web3FormsKey,
+          to_email: BUSINESS_RECEIVING_EMAIL,
           subject: `NEW WHOLESALE ORDER / QUOTE REQUEST - ${payload.companyName || payload.name}`,
           from_name: "RJ Traders B2B Website",
           name: payload.name,

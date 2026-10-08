@@ -105,7 +105,7 @@ export default function AboutPage() {
                   RJ Traders supplies genuine engine oils and spare parts to workshops, fleet operators, and retailers across Pakistan, with a commitment to authenticity, fair pricing, and fast delivery.
                 </p>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-                  Founded in Sadiqabad, Punjab, Pakistan, we have established direct distribution links with major lubricant brands (Shell, Mobil, Delo, Castrol) and OEM parts manufacturers, eliminating counterfeits and supply delays.
+                  Founded in Gondal super market phase three,N5 bypass road Sadiq abad, district rahimyarkhan, we have established direct distribution links with major lubricant brands (Shell, Mobil, Delo, Castrol) and OEM parts manufacturers, eliminating counterfeits and supply delays.
                 </p>
               </AnimatedSection>
 

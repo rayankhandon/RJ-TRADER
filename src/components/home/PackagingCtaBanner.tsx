@@ -20,7 +20,7 @@ export const PackagingCtaBanner: React.FC<PackagingCtaBannerProps> = ({ onOpenQu
     { icon: Users, text: "500+ Customers Served" },
     { icon: Package, text: "10,000+ Products Available" },
     { icon: Award, text: "Genuine Brands: Shell, Mobil, Total, Delo, Liqui Moly" },
-    { icon: MapPin, text: "Based in Sadiqabad, Punjab, Pakistan" },
+    { icon: MapPin, text: "Based in Gondal super market phase three,N5 bypass road Sadiq abad, district rahimyarkhan" },
   ];
 
   return (

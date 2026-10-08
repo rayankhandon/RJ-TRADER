@@ -11,6 +11,7 @@ import { OrderTrackingModal } from "@/components/ui/OrderTrackingModal";
 import { FloatingWidgets } from "@/components/common/FloatingWidgets";
 import { AnimatedSection } from "@/components/common/AnimatedSection";
 import { CONTACT_INFO } from "@/data/navigation";
+import { sendWholesaleQuote } from "@/lib/emailService";
 import { ChevronRight, Phone, Mail, MapPin, Clock, Send, User } from "lucide-react";
 
 export default function ContactPage() {
@@ -25,14 +26,34 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    setTimeout(() => {
+
+    try {
+      const res = await sendWholesaleQuote({
+        name: formData.name,
+        companyName: "Contact Form Direct Inquiry",
+        phone: formData.phone,
+        email: formData.email,
+        city: "N/A",
+        productName: formData.subject,
+        quantity: "N/A",
+        requirements: formData.message,
+        pageUrl: typeof window !== "undefined" ? window.location.href : "",
+      });
+
+      if (res.success) {
+        alert("Thank you! Your message has been sent directly to RJ Traders inbox (rjtrader098@gmail.com).");
+        setFormData({ name: "", email: "", phone: "", subject: "Wholesale Inquiry", message: "" });
+      } else {
+        alert(res.message || "Could not send message. Please try again.");
+      }
+    } catch (err) {
+      alert("Error sending message. Please try again.");
+    } finally {
       setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", subject: "Wholesale Inquiry", message: "" });
-      alert("Thank you! Your message has been sent to RJ Traders team.");
-    }, 1000);
+    }
   };
 
   return (
@@ -66,7 +87,7 @@ export default function ContactPage() {
             CONTACT RJ TRADERS
           </h1>
           <p className="text-xs sm:text-sm text-[#B8C4D9] max-w-2xl mt-2 font-normal leading-relaxed">
-            Get in touch with our B2B sales desk in Sadiqabad, Punjab, Pakistan. We are ready to answer your inquiries regarding bulk supply, custom packaging, and freight dispatch.
+            Get in touch with our B2B sales desk in Gondal super market phase three,N5 bypass road Sadiq abad, district rahimyarkhan. We are ready to answer your inquiries regarding bulk supply, custom packaging, and freight dispatch.
           </p>
         </div>
       </div>
@@ -145,7 +166,7 @@ export default function ContactPage() {
                           LOCATION
                         </span>
                         <span className="font-bold text-white text-xs mt-0.5 block leading-relaxed">
-                          RJ Traders Central Hub, Bypass Road, {CONTACT_INFO.location}
+                          {CONTACT_INFO.location}
                         </span>
                       </div>
                     </div>
@@ -179,7 +200,7 @@ export default function ContactPage() {
                     SADIQABAD WAREHOUSE & DEPOT
                   </h4>
                   <p className="text-[11.5px] text-gray-500 mt-1 font-normal leading-relaxed">
-                    Main National Highway / Karkhana Hub, Sadiqabad, Punjab, Pakistan
+                    Gondal super market phase three,N5 bypass road Sadiq abad, district rahimyarkhan
                   </p>
                   <a
                     href="https://maps.google.com/?q=Sadiqabad+Punjab+Pakistan"
@@ -261,7 +282,7 @@ export default function ContactPage() {
                             required
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="e.g. +92 321 1234567"
+                            placeholder="e.g. +92 309 0000098"
                             className="w-full h-11 border border-gray-300/90 rounded-xl pl-10 pr-3.5 text-xs text-gray-800 focus:outline-none focus:border-[#F97316] focus:ring-4 focus:ring-[#F97316]/15 transition-all duration-200"
                           />
                         </div>

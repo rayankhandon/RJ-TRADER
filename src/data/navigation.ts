@@ -59,9 +59,9 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const CONTACT_INFO = {
-  phoneDisplay: "+92 321 1234567",
-  phoneRaw: "+923211234567",
-  email: "info@rjtraders.pk",
-  location: "Sadiqabad, Punjab, Pakistan",
-  workingHours: "Mon - Sat: 9:00 AM - 6:00 PM",
+  phoneDisplay: "+92 309 0000098",
+  phoneRaw: "+923090000098",
+  email: "rjtrader098@gmail.com",
+  location: "Gondal super market phase three,N5 bypass road Sadiq abad, district rahimyarkhan",
+  workingHours: "Mon–Thu & Sat–Sun: 9:00 AM – 6:00 PM",
 };
