@@ -3,7 +3,7 @@ import { PRODUCTS } from "@/data/products";
 import { BLOG_POSTS } from "@/data/blogPosts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rj-trader.vercel.app";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.rj-traders.com";
   const now = new Date();
 
   // Core High-Priority Pages
